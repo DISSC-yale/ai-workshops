@@ -2,37 +2,33 @@
 marp: true
 theme: default
 paginate: true
+footer: Yale | Data-Intensive Social Science Center (DISSC)
 ---
 
-# AI Pair Programming
+# AI Pair Programming at Yale
 ## Beginner Workshop
 
-DISSC
+Nicholas Warren
+Lead, Artificial Intelligence & Machine Learning
 
 ---
 
 # Agenda
 
-- What are LLMs and Agents?
-- Setting up VS Code
-- Introduction to Claude Code
-- Writing effective prompts
-- Hands-on exercises
+- AI fundamentals: LLMs, agents, and tools
+- Planning with AI: the product roadmap approach
+- Pair programming with AI: prompts, iteration, and validation
+- Hands-on: Reviewing your code for publication
 
 ---
 
-# What You'll Learn
+# Prerequisites
 
-- Understand the basics of LLMs and agents
-- Navigate VS Code confidently
-- Set up and use Claude Code
-- Write effective prompts for coding tasks
-- Recognize AI limitations
+You should have:
 
----
+- VS Code installed
+- Git installed with a working GitHub account
+- Claude Code installed with an active Claude account
+- A code project or script to work with (Python, TypeScript, R, etc.)
 
-# Questions?
-
----
-
-# Thank You
+If you're missing any of these, pair up with someone nearby.
