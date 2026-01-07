@@ -6,7 +6,12 @@ Companion resources for DISSC's AI Pair Programming workshops, designed to help 
 
 **Please complete before the workshop:**
 - Bring a laptop with [VS Code](https://code.visualstudio.com) installed
+- Install [Git](https://git-scm.com/downloads) and create a [GitHub](https://github.com) account
 - Install [Claude Code](https://claude.com/product/claude-code) (preferred) with an active [Claude account](https://claude.ai)
+
+**Why Git/GitHub?** Version control is essential when working with AI coding tools. LLMs can make mistakes, especially in longer sessions, and Git lets you preserve progress, revert bad changes, and track what worked.
+
+**For the Beginner track:** Bring an R script and paper you want to understand or improve, or a published paper you'd like to replicate. We'll use these in hands-on exercises.
 
 ## Workshop Tracks
 
