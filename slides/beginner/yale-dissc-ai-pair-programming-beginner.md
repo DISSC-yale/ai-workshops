@@ -63,3 +63,24 @@ By the end of this workshop, you will have:
 
 > "Statistical prediction machines that repeatedly predict the next word in a sequence."
 > — [IBM](https://www.ibm.com/think/topics/large-language-models)
+
+---
+
+# How LLMs Work
+
+- Trained on internet-scale text (books, code, articles, Wikipedia, Reddit)
+- Learn patterns, not facts
+- Generate responses token by token
+
+**Key insight:** LLMs don't "know" things, they predict likely outputs
+
+---
+
+# LLM Limitations
+
+- Only as good as training data
+- Knowledge has a cutoff date
+- Can confidently produce false information ("hallucinations")
+- No access to real-time information (without tools)
+
+---
