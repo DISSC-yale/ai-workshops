@@ -13,6 +13,15 @@ For those new to AI-assisted development.
 - Your AI experience is primarily through chat interfaces (e.g., ChatGPT, Claude)
 - You're curious about AI coding tools but are unsure how/where to start
 
+**By the end of this track, you will:**
+- Understand the basics of LLMs and agents, including their tradeoffs and limitations
+- Navigate VS Code and manage files/projects confidently
+- Set up and use Claude Code (with Codex or Cursor as alternatives)
+- Write effective prompts for coding tasks
+- Recognize AI limitations and know when to verify output
+- Apply an iterative workflow for building with AI assistance
+- Understand how AI coding tools differ from chat interfaces
+
 ### Advanced
 For experienced practitioners looking to level up.
 
