@@ -2,6 +2,12 @@
 
 Companion resources for DISSC's AI Pair Programming workshops, designed to help you learn the tools and techniques for coding effectively with AI assistants.
 
+## Prework
+
+**Please complete before the workshop:**
+- Bring a laptop with [VS Code](https://code.visualstudio.com) installed
+- Install [Claude Code](https://claude.com/product/claude-code) (preferred) with an active [Anthropic Claude account](https://claude.ai)
+
 ## Workshop Tracks
 
 ### Beginner
