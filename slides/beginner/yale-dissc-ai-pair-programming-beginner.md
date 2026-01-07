@@ -46,3 +46,20 @@ By the end of this workshop, you will have:
 3. **A pair programming workflow**: Prompts, iteration, validation, and version control
 
 4. **A validation mindset**: Always verify AI output before trusting it
+
+---
+
+# AI Fundamentals
+
+---
+
+# What is an LLM?
+
+**Large Language Model**
+
+- Deep learning models trained on massive text datasets
+- Predict the next word based on patterns
+- Process and generate natural language
+
+> "Statistical prediction machines that repeatedly predict the next word in a sequence."
+> — [IBM](https://www.ibm.com/think/topics/large-language-models)
