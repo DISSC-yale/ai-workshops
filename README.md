@@ -6,7 +6,7 @@ Companion resources for DISSC's AI Pair Programming workshops, designed to help 
 
 **Please complete before the workshop:**
 - Bring a laptop with [VS Code](https://code.visualstudio.com) installed
-- Install [Claude Code](https://claude.com/product/claude-code) (preferred) with an active [Anthropic Claude account](https://claude.ai)
+- Install [Claude Code](https://claude.com/product/claude-code) (preferred) with an active [Claude account](https://claude.ai)
 
 ## Workshop Tracks
 
@@ -36,3 +36,11 @@ For experienced practitioners looking to level up.
 - You're comfortable with VS Code or similar editors
 - You've integrated AI into your development workflow
 - You want to share techniques and learn from other practitioners
+
+**By the end of this track, you will:**
+- Apply advanced prompting techniques for complex tasks
+- Customize AI tools for your specific workflows (e.g., project instructions, custom rules)
+- Debug and refactor effectively with AI assistance
+- Manage context and work efficiently in large codebases
+- Share and adopt techniques from fellow practitioners
+- Evaluate when AI accelerates vs. slows your work
