@@ -32,3 +32,17 @@ You should have:
 - A code project or script to work with (Python, TypeScript, R, etc.)
 
 If you're missing any of these, pair up with someone nearby.
+
+---
+
+# Top 4 Workshop Takeaways
+
+By the end of this workshop, you will have:
+
+1. **A mental model for AI tools**: LLMs, agents, context windows, and their tradeoffs
+
+2. **A framework for planning AI tasks**: Think like a product manager, not a programmer
+
+3. **A pair programming workflow**: Prompts, iteration, validation, and version control
+
+4. **A validation mindset**: Always verify AI output before trusting it
