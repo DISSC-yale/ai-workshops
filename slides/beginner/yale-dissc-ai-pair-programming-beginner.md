@@ -84,3 +84,27 @@ By the end of this workshop, you will have:
 - No access to real-time information (without tools)
 
 ---
+
+# Context Windows
+
+LLMs have a "context window": the amount of text they can consider at once
+
+- Like short-term memory with a fixed size
+- Includes your prompt and the conversation history
+- When the window fills up, earlier context gets dropped
+
+**Why this matters:** Context limits determine task size. Big tasks exhaust context, causing the AI to "forget" earlier work. This is why planning matters: your roadmap's grain size must fit within context limits.
+
+---
+
+# What is an Agent?
+
+- LLM that can take actions, not just generate text
+- Dynamically chooses tools and next steps
+- Works toward goals with minimal supervision
+- Think agency: agents have autonomy to decide how to accomplish tasks
+
+> "Systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks."
+> — [Anthropic](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
