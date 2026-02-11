@@ -1,0 +1,4 @@
+export CLAUDE_CODE_USE_BEDROCK=1
+export CLAUDE_CODE_MODEL="anthropic.claude-opus-4-6-v1"
+export AWS_REGION="us-east-1"
+export AWS_BEARER_TOKEN_BEDROCK="TOKEN_HERE"
