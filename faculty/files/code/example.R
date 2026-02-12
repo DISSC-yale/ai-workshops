@@ -120,5 +120,5 @@ did_model <- lm(Rate ~ treated_state * post, data = organ)
 
 # --- 5. Tidy regression output -----------------------------------------------
 
-# broom::tidy gives a clean tibble of coefficients
+# tidy() gives a clean tibble of coefficients
 tidy(did_model, conf.int = TRUE)

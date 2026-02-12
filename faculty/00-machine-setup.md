@@ -63,6 +63,8 @@ Open System Properties > Environment Variables > User variables and add the foll
 
 After saving, restart any open terminals or applications so they pick up the new variables.
 
+> **Do not share your API key or commit it to version control.** Treat it like a password.
+
 ---
 
 ## 4. Install Positron
@@ -122,5 +124,5 @@ After saving, restart any open terminals or applications so they pick up the new
 ## 9. Verify your setup
 
 - In the R Console, run `library(tidyverse)`. You should see a startup message listing attached packages.
-- In the Assistant chat panel, type `What is 2 + 2?` and confirm you get a response
-- If either step fails, restart Positron and retry. For credential issues, double-check that your API key is saved correctly in Step 3
+- In the Assistant chat panel, type `What is 2 + 2?` and confirm you get a response.
+- If either step fails, restart Positron and retry. For credential issues, double-check that your API key is saved correctly in Step 3.

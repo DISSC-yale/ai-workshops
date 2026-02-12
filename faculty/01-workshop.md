@@ -95,9 +95,9 @@ To run it:
 
 ## Troubleshooting
 
-- **Assistant not responding:** Restart Positron and verify your API key is set correctly (Step 3 in the setup guide)
-- **R packages not found:** Run `install.packages("tidyverse")` again in the R Console
-- **Plot not showing:** Check the Plots pane (bottom-right); click the tab if it's not visible
+- **Assistant not responding:** Restart Positron and verify your API key is set correctly (Step 3 in the setup guide).
+- **R packages not found:** Run `install.packages("tidyverse")` again in the R Console.
+- **Plot not showing:** Check the Plots pane (bottom-right); click the tab if it's not visible.
 - **Script errors:** Make sure the working directory is `faculty/`. Check with `getwd()` in the Console.
 
 ---
