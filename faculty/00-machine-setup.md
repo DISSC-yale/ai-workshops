@@ -12,24 +12,22 @@ These instructions cover macOS and Windows. Platform-specific steps are noted wh
 
 ---
 
-## 1. Install R
+## 1. Install R (macOS)
 
-**macOS Option A: Homebrew**
+**Option A: Homebrew**
 
 ```
 brew install r
 ```
 
-**macOS Option B: CRAN installer**
+**Option B: CRAN installer**
 
 - Download the latest `.pkg` from https://cran.r-project.org/bin/macosx/
 - Open the installer and follow the prompts
 
 ---
 
-## 1. Install R (continued)
-
-**Windows**
+## 1. Install R (Windows)
 
 - Download the latest `.exe` from https://cran.r-project.org/bin/windows/base/
 - Run the installer and follow the prompts
@@ -38,7 +36,7 @@ brew install r
 
 ## 2. Request an API key
 
-Email Nicholas Warren at DISSC (dissc@yale.edu) to request an AWS Bedrock API key for Claude. **Request this before the workshop;** you'll need the key in Step 3.
+Email Nicholas Warren at DISSC (dissc@yale.edu) to request an AWS Bedrock API key for Claude. **Request this before the workshop;** you'll need the key in Step 3. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
 
 ---
 
@@ -49,6 +47,8 @@ Copy the contents of `files/machine-setup/user/zprofile.txt` into `~/.zprofile`,
 ```
 source ~/.zprofile
 ```
+
+> **Do not share your API key or commit it to version control.** Treat it like a password.
 
 ---
 
@@ -79,6 +79,11 @@ After saving, restart any open terminals or applications so they pick up the new
   - macOS: from the Dock or Finder
   - Windows: from the Start Menu or desktop shortcut
 - `File > Open Folder` and select the `faculty` folder (not the repository root)
+
+---
+
+## 5. Configure Positron (continued)
+
 - Open the Command Palette (`Cmd + Shift + P` on macOS, `Ctrl + Shift + P` on Windows) and select `Preferences: Open User Settings (JSON)`
 - If the file is empty, paste the full contents of `files/machine-setup/positron/settings.json` and save. If you already have settings, merge the keys from that file into your existing JSON.
 
@@ -110,4 +115,12 @@ After saving, restart any open terminals or applications so they pick up the new
   install.packages("tidyverse")
   ```
 
-  The example script also uses `broom` and `scales`, which are installed automatically as part of `tidyverse`.
+  The example script also uses `broom` and `scales`, which are included when you install `tidyverse`.
+
+---
+
+## 9. Verify your setup
+
+- In the R Console, run `library(tidyverse)`. You should see a startup message listing attached packages.
+- In the Assistant chat panel, type `What is 2 + 2?` and confirm you get a response
+- If either step fails, restart Positron and retry. For credential issues, double-check that your API key is saved correctly in Step 3
