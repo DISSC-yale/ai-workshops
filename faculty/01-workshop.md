@@ -33,6 +33,17 @@ Complete the [setup instructions](00-machine-setup.md) before starting.
 
 ---
 
+## Workshop outline
+
+| Section | Duration |
+|---|---|
+| Overview & data security | ~10 min |
+| Run the example script | ~10 min |
+| Guided prompts with the Assistant | ~35 min |
+| Wrap-up & next steps | ~5 min |
+
+---
+
 ## How it works
 
 In this workshop you use **Positron**, a data-science IDE built by the makers of RStudio, with a built-in chat assistant. The assistant is powered by **Claude Opus 4.6**, a large language model made by Anthropic.
@@ -79,6 +90,15 @@ To run it:
 - Click the `Chat` icon in the left sidebar (glasses icon)
 - Try the example prompts in `files/prompts/examples.md` (copy and paste them into the Assistant)
 - You can also highlight code in the editor, right-click, and send it to the Assistant for explanation
+
+---
+
+## Troubleshooting
+
+- **Assistant not responding:** Restart Positron and verify your API key is set correctly (Step 3 in the setup guide)
+- **R packages not found:** Run `install.packages("tidyverse")` again in the R Console
+- **Plot not showing:** Check the Plots pane (bottom-right); click the tab if it's not visible
+- **Script errors:** Make sure the working directory is `faculty/`. Check with `getwd()` in the Console.
 
 ---
 
@@ -145,3 +165,12 @@ Copy and paste these prompts into the Assistant. Each builds on the `files/code/
 ### 10. Adapt the analysis for a new dataset
 
 > I have a dataset with columns state, year, outcome, and treated. The treatment began in 2015 for states in the treatment group. Adapt this script to work with my data instead.
+
+---
+
+## Next steps
+
+- **Get long-term access.** Your workshop API key will expire. Contact dissc@yale.edu for ongoing access.
+- **Try your own data.** Bring a dataset and a research question. The Assistant can help you write and refine the analysis.
+- **Explore other models.** AWS Bedrock provides access to additional models beyond Claude.
+- **Get in touch.** For questions or to schedule a consultation: nick.warren@yale.edu or dissc@yale.edu
