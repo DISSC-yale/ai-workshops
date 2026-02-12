@@ -56,7 +56,7 @@ After saving, restart any open terminals or applications so they pick up the new
 - Open Positron
   - macOS: from the Dock or Finder
   - Windows: from the Start Menu or desktop shortcut
-- `File > Open Folder` and select the project directory
+- `File > Open Folder` and select the `faculty` folder (not the repository root)
 - Open the Command Palette (`Cmd + Shift + P` on macOS, `Ctrl + Shift + P` on Windows) and select `Preferences: Open User Settings (JSON)`
 - If the file is empty, paste the full contents of `files/machine-setup/positron/settings.json` and save. If you already have settings, merge the keys from that file into your existing JSON.
 
