@@ -10,4 +10,4 @@ A hands-on workshop for university faculty exploring AI-assisted data analysis u
 - An example R script with a real causal inference dataset
 - Ready-to-use prompts for the Positron Assistant
 
-See [`faculty/workshop.md`](faculty/workshop.md) for the full setup and course guide.
+See [`faculty/01-workshop.md`](faculty/01-workshop.md) for the full setup and course guide.
