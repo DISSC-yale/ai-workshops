@@ -38,9 +38,9 @@ Complete the [setup instructions](00-machine-setup.md) before starting.
 | Section | Duration |
 |---|---|
 | Overview & data security | ~10 min |
-| Run the example script | ~10 min |
-| Guided prompts with the Assistant | ~35 min |
-| Wrap-up & next steps | ~5 min |
+| Run the example script | ~15 min |
+| Guided prompts with the Assistant | ~55 min |
+| Wrap-up & next steps | ~10 min |
 
 ---
 
