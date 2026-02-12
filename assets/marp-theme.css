@@ -1,0 +1,33 @@
+/* @theme yale-dissc */
+
+@import 'default';
+
+blockquote {
+  font-size: 1.1em;
+}
+
+footer {
+  left: 30px;
+  bottom: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  top: auto !important;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6em;
+  color: grey;
+}
+
+section::after {
+  bottom: 38px;
+  right: 30px;
+}
