@@ -2,6 +2,24 @@
 
 Complete the [setup instructions](machine-setup.md) before starting.
 
+## Goals
+
+- Learn how an LLM assistant can support your research workflow in R
+- Practice using AI to explain, iterate on, and extend a real statistical analysis
+- Understand the end-to-end setup so you can use these tools independently after the workshop
+
+## How it works
+
+In this workshop you use **Positron**, a data-science IDE built by the makers of RStudio, with a built-in chat assistant. The assistant is powered by **Claude Opus 4.6**, a large language model made by Anthropic.
+
+Your prompts and code are sent to Claude through **AWS Bedrock**, Amazon's managed AI service, running on Yale's AWS account. This matters for data security:
+
+- **Your data is not used for training.** AWS Bedrock does not use your prompts or outputs to train any models.
+- **Your data is not shared.** Model providers (including Anthropic) do not have access to your inputs, outputs, or logs. Models run in isolated AWS accounts that providers cannot access.
+- **Enterprise compliance.** AWS Bedrock is HIPAA eligible, SOC and ISO certified, and GDPR compliant.
+
+In short: you get the benefits of a frontier LLM without your research data leaving your institution's AWS environment or being used to improve future models.
+
 ## 1. Run the example
 
 The example script (`files/code/example.R`) runs a Difference-in-Differences analysis on organ donation rates. It examines whether California's Q3 2011 "active choice" policy (requiring residents to indicate Yes/No on organ donation when renewing their driver's license) caused an increase in donation rates, using other states as controls.
