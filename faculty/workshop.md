@@ -1,4 +1,6 @@
-# Workshop
+# Faculty Workshop
+
+Complete the [setup instructions](machine-setup.md) before starting.
 
 ## 1. Run the example
 
