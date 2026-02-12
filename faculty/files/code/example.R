@@ -23,7 +23,10 @@ glimpse(organ)
 
 organ <- organ |>
   mutate(
-    treated_state = if_else(State == "California", "California", "Control"),
+    treated_state = factor(
+      if_else(State == "California", "California", "Control"),
+      levels = c("Control", "California")
+    ),
     post = Quarter_Num >= 4 # Q3 2011 onward = post-treatment
   )
 
@@ -110,7 +113,7 @@ ggplot(group_means, aes(
 # --- 4. Estimate the DiD model -----------------------------------------------
 
 # Rate = β₀ + β₁(Treated) + β₂(Post) + β₃(Treated × Post) + ε
-# β₃ is the DiD estimate — the causal effect of the active-choice policy.
+# β₃ is the DiD estimate: the causal effect of the active-choice policy.
 
 did_model <- lm(Rate ~ treated_state * post, data = organ)
 
