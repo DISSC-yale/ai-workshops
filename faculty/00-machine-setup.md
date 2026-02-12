@@ -81,6 +81,7 @@ After saving, restart any open terminals or applications so they pick up the new
   - macOS: from the Dock or Finder
   - Windows: from the Start Menu or desktop shortcut
 - `File > Open Folder` and select the `faculty` folder (not the repository root)
+- When prompted, click `Yes, I trust the authors` to enable full functionality in the workspace
 
 ---
 
