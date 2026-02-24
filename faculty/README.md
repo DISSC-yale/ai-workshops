@@ -1,6 +1,6 @@
-# Faculty Workshop
+# AI Foundations Workshop
 
-A hands-on workshop for university faculty exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve the example code.
+A hands-on workshop exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve the example code.
 
 ## Getting Started
 

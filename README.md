@@ -1,13 +1,13 @@
 # AI-Augmented Research
-## Faculty Development & Pair Programming Workshops
+## AI Foundations & Pair Programming Workshops
 
 ### Getting Started
 
 Click the green **Code** button at the top of this page, then click **Download ZIP**. Extract the folder and open the relevant workshop directory below.
 
-### Faculty Workshop
+### AI Foundations Workshop
 
-A hands-on workshop for university faculty exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve their code.
+A hands-on workshop exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve their code.
 
 **What's included:**
 
