@@ -3,8 +3,8 @@
 # Dataset: Organ Donation Rates (Kessler & Roth, 2014)
 #
 # The question:
-#   Did California's 2011 "active choice" organ donation policy cause more
-#   people to register as organ donors?
+#   Did California's 2011 "active choice" organ donation policy affect
+#   organ donor registration rates?
 #
 # The idea:
 #   In Q3 2011, California started requiring residents to answer Yes or No
@@ -118,8 +118,7 @@ ggplot(group_means, aes(
     subtitle = str_wrap(
       paste(
         "Difference-in-Differences design around California's Q3 2011",
-        "active-choice organ donation policy. Parallel pre-trends support",
-        "the identifying assumption."
+        "active-choice organ donation policy."
       ),
       width = 80
     ),
@@ -152,8 +151,8 @@ ggplot(group_means, aes(
 #   B3 (treated_state x post) = the DiD estimate: the extra change in California
 #                                beyond what the control states experienced
 #
-# B3 is what we care about: if positive and significant, the policy increased
-# donation rates above and beyond the background trend.
+# B3 is what we care about. If it is significantly different from zero,
+# the policy changed donation rates beyond the background trend.
 
 did_model <- lm(Rate ~ treated_state * post, data = organ)
 
