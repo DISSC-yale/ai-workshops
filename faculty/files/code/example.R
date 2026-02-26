@@ -38,6 +38,13 @@ organ <- read_csv("files/code/data/organ_donations.csv", show_col_types = FALSE)
 # Preview the data: see column names, types, and first few values
 glimpse(organ)
 
+# What to look for:
+#   Each row is one state in one quarter. The key columns are:
+#     State       : which state (California, Alaska, etc.)
+#     Quarter_Num : time period (1 through 6)
+#     Rate        : the organ donation rate for that state and quarter
+#   The full dataset has 162 rows (27 states including DC, x 6 quarters).
+
 # --- 2. Create DiD variables -------------------------------------------------
 # DiD needs two key variables:
 #   treated_state: was this state affected by the policy? (California vs. Control)
@@ -140,6 +147,15 @@ ggplot(group_means, aes(
     panel.grid.minor = element_blank()
   )
 
+# How to read the plot:
+#   Look at the two lines BEFORE the dashed vertical line (the pre-treatment
+#   period). If they move roughly in parallel, it suggests both groups were on
+#   similar trajectories before California's policy. This is the "parallel
+#   trends" assumption, and it's what makes DiD credible.
+#
+#   Now look AFTER the dashed line. If California's line diverges from the
+#   control line, that gap is the visual estimate of the policy's effect.
+
 # --- 4. Estimate the DiD model -----------------------------------------------
 # The regression below estimates four things at once:
 #
@@ -161,3 +177,17 @@ did_model <- lm(Rate ~ treated_state * post, data = organ)
 # including the estimate, standard error, p-value, and confidence interval.
 
 tidy(did_model, conf.int = TRUE)
+
+# How to read the regression output:
+#   The table has one row per coefficient. Focus on the last row:
+#     "treated_stateCalifornia:postTRUE" is the interaction term (B3).
+#     This is the DiD estimate of the policy's causal effect.
+#
+#   If B3 is significantly different from zero (p-value below 0.05), the
+#   policy had a detectable effect on donation rates beyond the background
+#   trend observed in control states.
+#
+#   The other rows provide context:
+#     (Intercept)             : baseline rate for control states before the policy
+#     treated_stateCalifornia : California's rate vs. controls before the policy
+#     postTRUE                : change in control states' rate after Q3 2011
