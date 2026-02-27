@@ -1,22 +1,24 @@
-# AI-Augmented Research
-## AI Foundations & Pair Programming Workshops
+# Yale's DISSC AI Workshops
 
-### Getting Started
+## Getting Started
 
 Click the green **Code** button at the top of this page, then click **Download ZIP**. Extract the folder and open the relevant workshop directory below.
 
-### Workshops
+## AI Foundations
 
-#### AI Foundations: Positron + R
+Get started with AI-assisted research using an LLM in your IDE of choice.
 
-A hands-on workshop exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve their code.
+| Workshop | Status |
+|---|---|
+| [Positron + R](workshops/ai-foundations/positron-and-r/) | Available |
+| VS Code + R | Coming soon |
+| VS Code + Stata | Coming soon |
+| VS Code + Python | Coming soon |
 
-**What's included:**
+## AI Pair Programming
 
-- Machine setup instructions for R, Positron, and AWS Bedrock credentials
-- An example R script with a real causal inference dataset
-- Ready-to-use prompts for the Positron Assistant
+For researchers already using AI tools in their daily workflow.
 
-All materials are in [`workshops/ai-foundations/positron-and-r/`](workshops/ai-foundations/positron-and-r/).
-
-**Slides:** [Machine Setup](workshops/ai-foundations/positron-and-r/files/slides/00-machine-setup.pdf) | [Workshop Guide](workshops/ai-foundations/positron-and-r/files/slides/01-workshop.pdf)
+| Workshop | Status |
+|---|---|
+| VS Code | Coming soon |
