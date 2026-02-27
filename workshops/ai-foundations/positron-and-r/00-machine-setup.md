@@ -2,11 +2,11 @@
 marp: true
 theme: yale-dissc
 paginate: true
-footer: '![w:80](../assets/Yale-logo.png)'
+footer: '![w:80](../../../assets/Yale-logo.png)'
 header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-02-24'
 ---
 
-# AI Foundations Workshop Laptop Setup Guide
+# AI Foundations: Positron + R Laptop Setup Guide
 
 These instructions cover macOS and Windows. Platform-specific steps are noted where they differ.
 
@@ -111,7 +111,7 @@ After saving, restart any open terminals or applications so they pick up the new
 - Open Positron
   - macOS: from the Dock or Finder
   - Windows: from the Start Menu or desktop shortcut
-- `File > Open Folder` and select the `faculty` folder inside the workshop files you downloaded in Step 1
+- `File > Open Folder` and select the `positron-and-r` folder inside the workshop files you downloaded in Step 1
 - When prompted, click `Yes, I trust the authors` to enable full functionality in the workspace
 
 ---

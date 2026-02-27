@@ -1,17 +1,17 @@
-# AI Foundations Workshop
+# AI Foundations: Positron + R
 
 A hands-on workshop exploring AI-assisted data analysis using R and the Positron IDE. Participants work through a Difference-in-Differences analysis of organ donation rates (Kessler & Roth, 2014) while using an LLM assistant to explain, iterate on, and improve the example code.
 
 ## Getting Started
 
 1. Follow the [machine setup instructions](files/slides/00-machine-setup.pdf) to install R, Positron, and configure your credentials
-2. Open this `faculty` folder in Positron (`File > Open Folder`)
+2. Open this `positron-and-r` folder in Positron (`File > Open Folder`)
 3. Work through the [workshop guide](files/slides/01-workshop.pdf)
 
 ## Directory Structure
 
 ```
-faculty/
+positron-and-r/
 ├── files/
 │   ├── code/
 │   │   ├── example.R                # Example R script (DiD analysis)

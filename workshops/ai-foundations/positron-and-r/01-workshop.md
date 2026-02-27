@@ -2,11 +2,11 @@
 marp: true
 theme: yale-dissc
 paginate: true
-footer: '![w:80](../assets/Yale-logo.png)'
+footer: '![w:80](../../../assets/Yale-logo.png)'
 header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-02-24'
 ---
 
-# AI Foundations Workshop
+# AI Foundations: Positron + R
 
 <br>
 
@@ -98,7 +98,7 @@ To run it:
 - **Assistant not responding:** Restart Positron and verify your API key is set correctly (Step 3 in the setup guide).
 - **R packages not found:** Run `install.packages("tidyverse")` again in the R Console.
 - **Plot not showing:** Check the Plots pane (bottom-right); click the tab if it's not visible.
-- **Script errors:** Make sure the working directory is `faculty/`. Check with `getwd()` in the Console.
+- **Script errors:** Make sure the working directory is `positron-and-r/`. Check with `getwd()` in the Console.
 
 ---
 
