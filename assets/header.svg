@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 800 90">
+  <rect width="800" height="90" rx="6" fill="#00356b"/>
+  <text x="36" y="56"
+        fill="white"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="36"
+        letter-spacing="0.5">Yale</text>
+  <line x1="132" y1="22" x2="132" y2="68"
+        stroke="white" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="154" y="56"
+        fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="22"
+        font-weight="600">DISSC AI Workshops</text>
+</svg>

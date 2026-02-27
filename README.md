@@ -1,4 +1,4 @@
-# Yale's DISSC AI Workshops
+![Yale's DISSC AI Workshops](assets/header.svg)
 
 ## Getting Started
 
