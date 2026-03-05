@@ -11,7 +11,7 @@ Get started with AI-assisted research using an LLM in your IDE of choice.
 | Workshop | Status |
 |---|---|
 | [Positron + R](workshops/ai-foundations/positron-and-r/) | Available |
-| VS Code + R | Coming soon |
+| [VS Code + R](workshops/ai-foundations/vs-code-and-r/) | In review |
 | VS Code + Stata | Coming soon |
 | VS Code + Python | Coming soon |
 
