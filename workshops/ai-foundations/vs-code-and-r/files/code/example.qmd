@@ -1,0 +1,191 @@
+---
+title: "Difference-in-Differences: Organ Donation Rates"
+format: html
+---
+
+## Background
+
+In Q3 2011, California began requiring residents to answer Yes or No about organ
+donation when renewing their driver's license (an "active choice" policy). Other
+states did not change their policy. We can use **Difference-in-Differences (DiD)**
+to estimate whether the policy caused a change in donation rates, using other
+states as controls.
+
+**Data source:** Kessler, Judd B. and Alvin E. Roth. 2014. "Don't Take 'No' For
+An Answer: An Experiment With Actual Organ Donor Registrations." NBER Working
+Paper 20378. Dataset via the `causaldata` R package, featured in *The Effect* by
+Nick Huntington-Klein.
+
+The dataset is in `data/organ_donations.csv` with columns: `State`, `Quarter`,
+`Rate`, `Quarter_Num`. It covers 27 states (including DC) across 6 quarters
+(Q4 2010 through Q1 2012).
+
+
+# Phase 1: Concept & Idea Generation
+
+Use Claude Code to explore the research question before writing any code. Open a
+terminal and run `claude`, then try prompts like:
+
+- *What is Difference-in-Differences and when is it an appropriate method?*
+- *What assumptions does DiD rely on? How could they be violated?*
+- *I have organ donation rate data for 27 states across 6 quarters. California
+  introduced an "active choice" policy in Q3 2011. How would I set up a DiD
+  analysis to estimate the policy's effect?*
+
+
+# Phase 2: Script Creation
+
+Ask Claude Code to help you write code to import the dataset and prepare it for
+analysis. For example: *Read in data/organ_donations.csv and add the variables I
+need for a DiD analysis: a treatment indicator for California and a post-policy
+indicator for Q3 2011 onward.*
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(broom)
+```
+
+```{r}
+#| label: import-and-prepare
+# Use Claude Code to help you write this section.
+# The code in Phase 3 expects these variable names:
+#   organ          = the dataframe
+#   treated_state  = factor: "California" or "Control"
+#   post           = logical: TRUE when Quarter_Num >= 4
+
+```
+
+
+# Phase 3: Analysis & Visualization
+
+The code below runs the DiD analysis and creates a plot. Use Claude Code to
+explore and modify it. Try changing the plot style, adjusting scales, or adding
+new analyses.
+
+## Visualize parallel trends
+
+```{r}
+#| label: plot-trends
+quarter_labels <- c(
+  "1" = "Q4\n2010", "2" = "Q1\n2011", "3" = "Q2\n2011",
+  "4" = "Q3\n2011", "5" = "Q4\n2011", "6" = "Q1\n2012"
+)
+
+group_means <- organ |>
+  summarise(
+    mean_rate = mean(Rate),
+    .by = c(treated_state, Quarter, Quarter_Num)
+  )
+
+palette <- c("California" = "#D55E00", "Control" = "#0072B2")
+
+ggplot(group_means, aes(
+  x = Quarter_Num, y = mean_rate,
+  colour = treated_state, shape = treated_state
+)) +
+  annotate(
+    "rect",
+    xmin = 3.5, xmax = 6.5, ymin = -Inf, ymax = Inf,
+    fill = "grey90", alpha = 0.5
+  ) +
+  geom_vline(xintercept = 3.5, linetype = "dashed", colour = "grey50") +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3.5) +
+  annotate(
+    "text",
+    x = 3.4, y = max(group_means$mean_rate) + 0.005,
+    label = "Policy\nenacted",
+    hjust = 1, size = 3.2, colour = "grey40", lineheight = 0.9
+  ) +
+  annotate(
+    "label",
+    x = 5, y = min(group_means$mean_rate) - 0.01,
+    label = "Post-treatment period",
+    size = 3, fill = "grey90", label.padding = unit(0.2, "lines"),
+    colour = "grey40"
+  ) +
+  scale_x_continuous(breaks = 1:6, labels = quarter_labels) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_colour_manual(values = palette) +
+  scale_shape_manual(values = c("California" = 17, "Control" = 16)) +
+  labs(
+    title = "Organ Donation Rates: California vs. Control States",
+    subtitle = str_wrap(paste(
+      "Difference-in-Differences design around California's Q3 2011",
+      "active-choice organ donation policy."
+    ), width = 80),
+    x = NULL, y = "Donation Rate",
+    colour = NULL, shape = NULL,
+    caption = "Source: Kessler & Roth (2014) via causaldata R package"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    plot.title.position = "plot",
+    plot.subtitle = element_text(colour = "grey30", margin = margin(b = 10)),
+    plot.caption = element_text(colour = "grey50", size = 9),
+    legend.position = "top",
+    legend.justification = "left",
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Estimate the DiD model
+
+```{r}
+#| label: did-model
+did_model <- lm(Rate ~ treated_state * post, data = organ)
+tidy(did_model, conf.int = TRUE)
+```
+
+Try asking Claude Code:
+
+- *Change the y-axis to show values from 0% to 100%*
+- *Switch the plot to a black-and-white theme suitable for print*
+- *Add robust standard errors clustered at the state level*
+- *Create a summary statistics table broken down by treatment group and period*
+
+
+# Phase 4: Debugging
+
+The code below has several bugs. Use Claude Code to find and fix them. Try
+copying a chunk into your prompt, or ask Claude Code to *look at the Phase 4
+section of example.qmd and fix the bugs*.
+
+```{r}
+#| label: buggy-imports
+#| eval: false
+# Bug 1: Wrong file path and missing library
+organ_data <- read_csv("organ_donations.csv")
+
+glimpse(organ_data)
+```
+
+```{r}
+#| label: buggy-variables
+#| eval: false
+# Bug 2: Wrong column names and logic error
+organ_data <- organ_data |>
+  mutate(
+    treated = if_else(state == "CA", "Treated", "Control"),
+    post_policy = quarter_num > 4
+  )
+```
+
+```{r}
+#| label: buggy-plot
+#| eval: false
+# Bug 3: Mismatched variable names and wrong geom
+ggplot(organ_data, aes(x = Quarter_Num, y = rate, colour = treated)) +
+  geom_bar() +
+  labs(title = Organ Donation Rates Over Time)
+```
+
+```{r}
+#| label: buggy-model
+#| eval: false
+# Bug 4: Formula references wrong variable names
+model <- lm(rate ~ treated * post_policy, data = organ_data)
+summary(model)
+```

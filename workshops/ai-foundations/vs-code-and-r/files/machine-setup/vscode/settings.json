@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "renv.lock": "json"
+    },
+    "r.bracketedPaste": true,
+    "r.session.levelOfObjectDetail": "Detailed",
+    "r.lsp.diagnostics": true,
+    "r.rterm.option": ["--no-save", "--no-restore"]
+}
