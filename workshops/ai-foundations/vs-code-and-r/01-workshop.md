@@ -39,11 +39,44 @@ Complete the [setup instructions](00-machine-setup.md) before starting.
 
 | Phase | Description | Duration |
 |---|---|---|
-| Overview | Data security and tool orientation | ~10 min |
+| Overview | VS Code orientation, data security, and Claude Code intro | ~15 min |
 | 1. Concept & idea generation | Explore the research question with Claude Code | ~10 min |
-| 2. Script creation | Import data and build analysis code | ~20 min |
+| 2. Script creation | Import data and build analysis code | ~15 min |
 | 3. Analysis & visualization | Iterate on plots, scales, and models | ~30 min |
 | 4. Debugging | Diagnose and fix broken code | ~20 min |
+
+---
+
+## What is VS Code?
+
+**Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It works on macOS, Windows, and Linux. Think of it as a modern replacement for RStudio, Notepad++, or any text editor you currently use for writing code.
+
+Key differences from RStudio:
+- VS Code supports **any programming language** (R, Python, Stata, etc.) through extensions
+- It has a built-in **terminal** where you can run shell commands
+- It is the most widely used code editor in the world, with a large ecosystem of extensions
+
+---
+
+## Navigating the VS Code interface
+
+| Area | Location | What it does |
+|---|---|---|
+| **Activity Bar** | Far left (icons) | Switch between Explorer, Search, Extensions |
+| **Side Bar** | Left panel | File tree, search results, or extensions |
+| **Editor** | Center | View and edit files. Run code with `Cmd/Ctrl + Enter` |
+| **Panel** | Bottom | Terminal and R Terminal. Toggle with `` Ctrl + ` `` |
+
+---
+
+## Key actions in VS Code
+
+| Action | How |
+|---|---|
+| Find your files | Click the top Activity Bar icon to open the **Explorer** |
+| Open a terminal | `` Ctrl + ` `` or `Terminal > New Terminal` |
+| Install extensions | `Cmd/Ctrl + Shift + X` to open the Extensions view |
+| Command Palette | `Cmd/Ctrl + Shift + P` — universal search for any command or setting |
 
 ---
 
@@ -57,27 +90,29 @@ Your prompts and code are sent to **Claude Opus 4.6** through **AWS Bedrock**, A
 
 ## VS Code for RStudio users
 
-If you're coming from RStudio, here's where to find the features you know:
-
 | RStudio | VS Code equivalent |
 |---|---|
-| Console | **R Terminal** (bottom panel) |
-| Source editor | **Editor** (center). Run lines with `Cmd + Enter` / `Ctrl + Enter` |
-| Environment pane | **R: Workspace** in the sidebar (click the R icon) |
-| Plots pane | Renders inline in the Quarto notebook |
-| Help pane | Hover over a function, or `?function_name` in the R Terminal |
-| Viewer / data | `View(dataframe)` in the R Terminal |
+| Console | **R Terminal** (bottom Panel) |
+| Source editor | **Editor** (center). Run lines with `Cmd/Ctrl + Enter` |
+| Files pane | **Explorer** (top icon in Activity Bar) |
+| Environment pane | **R: Workspace** (R icon in Activity Bar) |
+| Plots pane | Inline in the Quarto notebook |
+| Help | Hover over a function, or `?fn` in R Terminal |
 
 ---
 
 ## What is Claude Code?
 
-Claude Code is Anthropic's official command-line tool for Claude. It runs in your terminal and can:
+**Claude Code** is Anthropic's official command-line tool that brings Claude directly into your terminal. Unlike ChatGPT or other web-based assistants, Claude Code runs where you work (inside VS Code's terminal) and can see your project files.
+
+It can:
 
 - **Read and understand your project files** without copying and pasting
 - **Edit files directly** when you ask it to make changes
 - **Run commands** like R scripts, git operations, and more
 - **Answer questions** about your code, data, and analysis
+
+You interact with it by typing natural language prompts, just like chatting.
 
 ---
 
@@ -93,16 +128,16 @@ In short: you get the benefits of a frontier LLM without research data leaving Y
 
 ## Open the workshop notebook
 
-- In VS Code, open `files/code/example.qmd` from the file explorer
-- This is a **Quarto notebook** that mixes markdown text with R code chunks
-- Click the **Run Cell** button above any code chunk to run it
+- In the **Explorer** (top icon in the Activity Bar on the left), navigate to `files > code` and click `example.qmd`
+- This is a **Quarto notebook** that mixes markdown text with R code chunks (similar to R Markdown)
+- Click the **Run Cell** button (play icon) above any code chunk to run it
 - Output (plots, tables, text) appears inline below each chunk
 
 ---
 
 ## Start Claude Code
 
-Open a terminal in VS Code (`` Ctrl + ` ``) and run:
+Open a **new terminal** in VS Code: press `` Ctrl + ` `` or go to `Terminal > New Terminal` in the menu bar. In the terminal that appears at the bottom, type:
 
 ```
 claude
@@ -120,12 +155,12 @@ This opens an interactive session. Useful commands:
 
 ## Two terminals, two tools
 
-VS Code's bottom panel can have multiple terminals open at once. In this workshop you'll use two:
+VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
 
 - **R Terminal**: runs R code. Created automatically when you open a `.qmd` or `.R` file. Use it for `install.packages()`, `library()`, and running code chunks.
-- **Terminal**: a regular shell (zsh/bash/cmd). Open one with `` Ctrl + ` ``. This is where you run `claude` to start Claude Code.
+- **Terminal** (zsh / bash / cmd): a regular shell. This is where you run `claude` to start Claude Code.
 
-You can switch between them using the dropdown in the terminal panel header.
+To switch between them, click the **dropdown arrow** next to the terminal name in the Panel header (e.g., it might say "R Interactive" or "zsh"). You can also click the **+** icon to create a new terminal.
 
 ---
 
