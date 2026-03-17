@@ -156,7 +156,7 @@ section of example.qmd and fix the bugs*.
 ```{r}
 #| label: buggy-imports
 #| eval: false
-# Bug 1: Wrong file path and missing library
+# Bug 1: Wrong file path
 organ_data <- read_csv("organ_donations.csv")
 
 glimpse(organ_data)
