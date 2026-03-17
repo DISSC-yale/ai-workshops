@@ -178,6 +178,8 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ## 9. Install VS Code
 
+**Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It supports R, Python, and many other languages through extensions. We use it in this workshop as your main working environment.
+
 - Download and install from https://code.visualstudio.com/
 
 ---
@@ -212,7 +214,8 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ## 12. Start an R session
 
-- Open `files/code/example.qmd` from the file explorer
+- In VS Code's left sidebar, click the top icon (two overlapping pages) to open the **Explorer**, which shows your project files
+- Navigate to `files > code` and click `example.qmd` to open it
 - If prompted, select the R installation from Step 3
 - An **R Terminal** will appear in the bottom panel with an `>` prompt
 
