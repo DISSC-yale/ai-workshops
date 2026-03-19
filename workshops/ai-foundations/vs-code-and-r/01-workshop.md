@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-04'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-19'
 ---
 
 <style>table { width: 100%; }</style>
@@ -23,7 +23,7 @@ Lead, Data Engineering and Solution Team, DISSC
 
 ## Prerequisites
 
-Complete the [setup instructions](00-machine-setup.md) before starting.
+Complete the [setup instructions](files/slides/00-machine-setup.pdf) before starting.
 
 ---
 
@@ -39,7 +39,7 @@ Complete the [setup instructions](00-machine-setup.md) before starting.
 
 | Phase | Description | Duration |
 |---|---|---|
-| Overview | VS Code orientation, data security, and Claude Code intro | ~15 min |
+| Overview | VS Code orientation, data security, and Claude Code | ~15 min |
 | 1. Concept & idea generation | Explore the research question with Claude Code | ~10 min |
 | 2. Script creation | Import data and build analysis code | ~15 min |
 | 3. Analysis & visualization | Iterate on plots, scales, and models | ~30 min |
@@ -49,7 +49,7 @@ Complete the [setup instructions](00-machine-setup.md) before starting.
 
 ## What is VS Code?
 
-**Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It works on macOS, Windows, and Linux. Think of it as a modern replacement for RStudio, Notepad++, or any text editor you currently use for writing code.
+**Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It works on macOS, Windows, and Linux. Think of it as a modern replacement for RStudio or whatever editor you currently use for writing code.
 
 Key differences from RStudio:
 - VS Code supports **any programming language** (R, Python, Stata, etc.) through extensions
@@ -112,8 +112,6 @@ It can:
 - **Run commands** like R scripts, git operations, and more
 - **Answer questions** about your code, data, and analysis
 
-You interact with it by typing natural language prompts, just like chatting.
-
 ---
 
 ## Data security
@@ -157,7 +155,7 @@ This opens an interactive session. Useful commands:
 
 VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
 
-- **R Terminal**: runs R code. Created automatically when you open a `.qmd` or `.R` file. Use it for `install.packages()`, `library()`, and running code chunks.
+- **R Terminal**: runs R code. Use it for `install.packages()`, `library()`, and running code chunks. Click `R: (not attached)` in the status bar to start it.
 - **Terminal** (zsh / bash / cmd): a regular shell. This is where you run `claude` to start Claude Code.
 
 To switch between them, click the **dropdown arrow** next to the terminal name in the Panel header (e.g., it might say "R Interactive" or "zsh"). You can also click the **+** icon to create a new terminal.
@@ -179,9 +177,7 @@ Claude Code will ask for permission before editing files or running commands. Be
 
 - **Read the diff.** Claude Code shows you exactly what it plans to change. Make sure you understand the edit before accepting.
 - **Run the code yourself.** After Claude edits a chunk, run it to confirm it produces the output you expect.
-- **Verify statistical claims.** AI can make reasoning errors. Always check coefficients, p-values, and interpretations against your own understanding.
-
-> You can type `!` to allow all actions for the session, but we recommend reviewing individually while you're learning.
+- **Verify statistical claims.** AI can make reasoning errors. Check coefficients, p-values, and interpretations against your own understanding.
 
 ---
 
