@@ -58,48 +58,15 @@ brew install r
 
 ---
 
-## 4. Install Node.js (macOS)
+## 4. Request an API key
 
-Claude Code requires Node.js version 18 or later.
-
-**Option A: Homebrew** (if you completed Step 2)
-
-```
-brew install node
-```
-
-**Option B: Installer**
-
-- Download the LTS installer from https://nodejs.org/
-
-Verify by running `node --version` in Terminal. You should see `v22.x.x` or similar.
+Email Nicholas Warren at DISSC (dissc@yale.edu) to request an AWS Bedrock API key for Claude. **Request this before the workshop;** you'll need the key in Step 5. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
 
 ---
 
-## 4. Install Node.js (Windows)
+## 5. Configure AWS Bedrock credentials (macOS)
 
-Claude Code requires Node.js version 18 or later.
-
-- Download the LTS installer from https://nodejs.org/
-- Run the installer and follow the prompts (accept the defaults)
-
-Verify by opening **Command Prompt** and running:
-
-```
-node --version
-```
-
----
-
-## 5. Request an API key
-
-Email Nicholas Warren at DISSC (dissc@yale.edu) to request an AWS Bedrock API key for Claude. **Request this before the workshop;** you'll need the key in Step 6. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
-
----
-
-## 6. Configure AWS Bedrock credentials (macOS)
-
-In Terminal, run `nano ~/.zprofile` and add these three lines, replacing `TOKEN_HERE` with your API key from Step 5:
+In Terminal, run `nano ~/.zprofile` and add these three lines, replacing `TOKEN_HERE` with your API key from Step 4:
 
 ```
 export AWS_REGION="us-east-1"
@@ -111,7 +78,7 @@ Save with `Ctrl + O`, press `Enter`. Exit with `Ctrl + X`.
 
 ---
 
-## 6. Configure AWS Bedrock credentials (macOS, continued)
+## 5. Configure AWS Bedrock credentials (macOS, continued)
 
 Back in Terminal, load the new settings into your current session:
 
@@ -125,7 +92,7 @@ source ~/.zprofile
 
 ---
 
-## 6. Configure AWS Bedrock credentials (Windows)
+## 5. Configure AWS Bedrock credentials (Windows)
 
 Click the Start menu, type `environment variables`, and select **Edit environment variables for your account**. Under **User variables**, click **New** to add each:
 
@@ -139,25 +106,15 @@ After saving, restart any open terminals or applications.
 
 ---
 
-## 7. Install Claude Code
+## 6. Install Claude Code
 
-Open a **new** terminal window so it picks up the credentials from Step 6, then run:
+Follow the **Terminal** install instructions for your platform at https://code.claude.com/docs/en/overview
 
-```
-npm install -g @anthropic-ai/claude-code
-```
-
-Verify the installation:
-
-```
-claude --version
-```
-
-> If you get a permissions error on macOS, run `sudo npm install -g @anthropic-ai/claude-code` instead.
+Open a **new** terminal window so it picks up the credentials from Step 5, then verify the installation by running `claude --version`.
 
 ---
 
-## 8. Install Quarto (macOS)
+## 7. Install Quarto (macOS)
 
 ```
 brew install --cask quarto
@@ -167,14 +124,14 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ---
 
-## 8. Install Quarto (Windows)
+## 7. Install Quarto (Windows)
 
 - Download the installer from https://quarto.org/docs/get-started/
 - Run the installer and follow the prompts
 
 ---
 
-## 9. Install VS Code
+## 8. Install VS Code
 
 **Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It supports R, Python, and many other languages through extensions. We use it in this workshop as your main working environment.
 
@@ -182,7 +139,7 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ---
 
-## 10. Install VS Code extensions
+## 9. Install VS Code extensions
 
 - Open VS Code
 - Click the **Extensions** icon in the left sidebar (`Cmd + Shift + X` / `Ctrl + Shift + X`)
@@ -192,16 +149,16 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ---
 
-## 11. Configure VS Code
+## 10. Configure VS Code
 
-> If VS Code was already open during Step 6, quit and reopen it so it picks up the new credentials.
+> If VS Code was already open during Step 5, quit and reopen it so it picks up the new credentials.
 
 - `File > Open Folder` and select the `vs-code-and-r` folder from Step 1
 - When prompted, click `Yes, I trust the authors`
 
 ---
 
-## 11. Configure VS Code (continued)
+## 10. Configure VS Code (continued)
 
 - Open the Command Palette (`Cmd + Shift + P` / `Ctrl + Shift + P`)
 - Type `User Settings JSON` and select `Preferences: Open User Settings (JSON)`
@@ -210,7 +167,7 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ---
 
-## 12. Start an R session
+## 11. Start an R session
 
 - In VS Code's left sidebar, click the top icon (two overlapping pages) to open the **Explorer**, which shows your project files
 - Navigate to `files > code` and click `example.qmd` to open it
@@ -220,7 +177,7 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 ---
 
-## 13. Install R packages
+## 12. Install R packages
 
 In the R Terminal, run:
 
@@ -233,7 +190,7 @@ install.packages(c("tidyverse", "languageserver"))
 
 ---
 
-## 14. Verify your setup
+## 13. Verify your setup
 
 **R:** In the R Terminal, run `library(tidyverse)`. You should see a startup message listing attached packages.
 

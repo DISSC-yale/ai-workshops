@@ -251,9 +251,9 @@ Then try a follow-up:
 
 ## Troubleshooting
 
-- **Claude Code not responding:** Restart your terminal and verify credentials (Step 6 in setup). Run `echo $CLAUDE_CODE_USE_BEDROCK` to confirm it's `1`.
+- **Claude Code not responding:** Restart your terminal and verify credentials (Step 5 in setup). Run `echo $CLAUDE_CODE_USE_BEDROCK` to confirm it's `1`.
 - **R packages not found:** Run `install.packages("tidyverse")` in the R Terminal.
-- **No code completion:** Make sure `languageserver` is installed (Step 13 in setup). Restart VS Code.
+- **No code completion:** Make sure `languageserver` is installed (Step 12 in setup). Restart VS Code.
 - **Script errors:** Check the working directory with `getwd()` in the R Terminal.
 
 ---
