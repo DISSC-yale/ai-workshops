@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-04'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-19'
 ---
 
 <style>table { width: 100%; }</style>
@@ -121,7 +121,7 @@ source ~/.zprofile
 
 > If your Mac uses `bash` instead of `zsh` (check with `echo $SHELL`), use `~/.bash_profile` instead.
 
-> **Do not share your API key or commit it to version control.** Treat it like a password.
+> **Treat your API key like a password.** Do not share it or commit it to version control.
 
 ---
 
@@ -136,8 +136,6 @@ Click the Start menu, type `environment variables`, and select **Edit environmen
 | `CLAUDE_CODE_USE_BEDROCK` | `1` |
 
 After saving, restart any open terminals or applications.
-
-> **Do not share your API key or commit it to version control.** Treat it like a password.
 
 ---
 
@@ -216,6 +214,7 @@ If you don't have Homebrew, download the installer from https://quarto.org/docs/
 
 - In VS Code's left sidebar, click the top icon (two overlapping pages) to open the **Explorer**, which shows your project files
 - Navigate to `files > code` and click `example.qmd` to open it
+- Click `R: (not attached)` in the bottom status bar, or run any code chunk — this will start the R session
 - If prompted, select the R installation from Step 3
 - An **R Terminal** will appear in the bottom panel with an `>` prompt
 
@@ -245,5 +244,3 @@ claude "What is 2 + 2?"
 ```
 
 You should see Claude respond with an answer.
-
-> If Claude Code prompts you to accept the terms of service on first run, type `yes`.
