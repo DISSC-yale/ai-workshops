@@ -47,6 +47,22 @@ Complete the [setup instructions](files/slides/00-machine-setup.pdf) before star
 
 ---
 
+
+## How it works
+
+Our tool stack is composed of 
+  1. **VS Code** allows *you* to read, write, edit and run code
+       a. **R** and **Quarto** are the specific extensions for analytics but this could be Python or Stata
+  2. **Claude Code**  allows your *AI assistant* to read, write, edit and run code. 
+       b. *You* interact with you *AI assistant* via terminal and through changes it makes by viewing files in VS code
+
+Maurice: Nick a Figure might be nice here - maybe we could move what I put in 00. Also not sure this is correct but I think a slide that wraps it all together first might make sense. 
+
+Your prompts and code are sent to **Claude Opus 4.6** through **AWS Bedrock**, Amazon's managed AI service, running on Yale's AWS account.
+
+---
+
+
 ## What is VS Code?
 
 **Visual Studio Code (VS Code)** is a free, open-source code editor made by Microsoft. It works on macOS, Windows, and Linux. Think of it as a modern replacement for RStudio or whatever editor you currently use for writing code.
@@ -80,13 +96,6 @@ Key differences from RStudio:
 
 ---
 
-## How it works
-
-In this workshop you use **VS Code** as your editor with the **R** and **Quarto** extensions, and **Claude Code** as your AI assistant. Claude Code is a command-line tool made by Anthropic that brings Claude directly into your terminal.
-
-Your prompts and code are sent to **Claude Opus 4.6** through **AWS Bedrock**, Amazon's managed AI service, running on Yale's AWS account.
-
----
 
 ## VS Code for RStudio users
 
@@ -114,6 +123,18 @@ It can:
 
 ---
 
+## Secure the blast radiuos
+
+- What make coding agents very powerful also makes them very dangerous 
+- Coding agents have access to your computer, which you can limit 
+- This means agents can read, write and run any file including your secrets
+- They can also potentially delete files 
+- As you work with agents they will ask you for access, you must weigh the blast radious of each decision
+    + e.g. a deletion command should be approach with extreme caution and a request to read `.ssh` should never be allowed 
+
+
+--- 
+
 ## Data security
 
 - **Your data is not used for training.** AWS Bedrock does not use your prompts or outputs to train any models.
@@ -121,6 +142,8 @@ It can:
 - **Enterprise compliance.** AWS Bedrock is HIPAA eligible, SOC and ISO certified, and GDPR compliant.
 
 In short: you get the benefits of a frontier LLM without research data leaving Yale's AWS environment or being used to improve future models.
+
+! - **Caution must be used when using frontier models subscriptions like Anthropic or OpenAI**
 
 ---
 
@@ -153,6 +176,7 @@ This opens an interactive session. Useful commands:
 
 ## Two terminals, two tools
 
+Maurice: Nick is there a reason you dont have them use the claude extension in vscode? 
 VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
 
 - **R Terminal**: runs R code. Use it for `install.packages()`, `library()`, and running code chunks. Click `R: (not attached)` in the status bar to start it.
