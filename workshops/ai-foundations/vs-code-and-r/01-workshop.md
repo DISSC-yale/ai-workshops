@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-19'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-08'
 ---
 
 <style>table { width: 100%; }</style>
@@ -29,9 +29,19 @@ Complete the [setup instructions](files/slides/00-machine-setup.pdf) before star
 
 ## Goals
 
-- Learn how Claude Code can support your research workflow in R
+- Learn how Claude Code can accelerate your research workflow in R
 - Practice using AI to explain, iterate on, and extend a real statistical analysis
 - Understand the end-to-end setup so you can use these tools independently after the workshop
+
+---
+
+## Why this matters
+
+Research workflows in R involve repetitive, time-consuming tasks: cleaning data, debugging cryptic error messages, writing boilerplate code, and iterating on visualizations. Claude Code can handle these so you can focus on the research questions.
+
+- **Hours to minutes.** Tasks like reformatting data, writing plot code, or adding robust standard errors can be done in a single prompt.
+- **Lower the barrier.** You don't need to memorize package syntax. Describe what you want in plain English and iterate from there.
+- **Stay in your editor.** No context-switching to a browser. Claude works alongside your code and can read your files directly.
 
 ---
 
@@ -39,11 +49,51 @@ Complete the [setup instructions](files/slides/00-machine-setup.pdf) before star
 
 | Phase | Description | Duration |
 |---|---|---|
-| Overview | VS Code orientation, data security, and Claude Code | ~15 min |
-| 1. Concept & idea generation | Explore the research question with Claude Code | ~10 min |
-| 2. Script creation | Import data and build analysis code | ~15 min |
-| 3. Analysis & visualization | Iterate on plots, scales, and models | ~30 min |
-| 4. Debugging | Diagnose and fix broken code | ~20 min |
+| Setup | Verify installations and configure tools | ~15 min |
+| Overview | Terminal, VS Code, Claude Code, memory, skills | ~20 min |
+| 1. Idea generation | Explore the research question | ~5 min |
+| 2. Script creation | Import data and build analysis code | ~5 min |
+| 3. Analysis & visualization | Iterate on plots, scales, and models | ~10 min |
+| 4. Debugging | Diagnose and fix broken code | ~5 min |
+
+---
+
+## What is the terminal?
+
+The **terminal** is a text-based interface for your computer. Instead of clicking icons, you type commands. Think of it like the R console, but for your entire machine.
+
+| Concept | What it means |
+|---|---|
+| **Shell** | The program that runs your commands (`zsh`, `bash`, `cmd`) |
+| **Command** | A text instruction like `ls` (list files) or `cd` (change folder) |
+| **Working directory** | The folder your terminal is currently "in" |
+
+---
+
+## Essential terminal commands
+
+These are the commands you'll use most often:
+
+| Command | What it does | Example |
+|---|---|---|
+| `ls` | List files in the current folder | `ls data/` |
+| `cd` | Change directory (move to another folder) | `cd ~/Documents` |
+| `pwd` | Print the current working directory | `pwd` |
+| `cat` | Print the contents of a file | `cat data.csv` |
+| `claude` | Start Claude Code | `claude` |
+
+> You don't need to memorize these. Claude Code can run them for you.
+
+---
+
+## Key concepts from setup
+
+| Tool | What it is |
+|---|---|
+| **Homebrew** | A macOS package manager. Like `install.packages()` but for any software. |
+| **Quarto** | A publishing tool. `.qmd` files mix code and text, like R Markdown. |
+| **AWS Bedrock** | Amazon's managed AI service. Your prompts route through Yale's AWS account. |
+| **API key** | A password-like token that authenticates your requests to the AI service. |
 
 ---
 
@@ -151,6 +201,14 @@ This opens an interactive session. Useful commands:
 
 ---
 
+## Select the right model
+
+Once Claude Code is running, type `/model` and select **Opus 4.6** from the list. This is the most capable model and the one we'll use throughout the workshop.
+
+> If you skip this step, Claude Code may default to a less capable model that produces lower-quality results.
+
+---
+
 ## Two terminals, two tools
 
 VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
@@ -178,6 +236,57 @@ Claude Code will ask for permission before editing files or running commands. Be
 - **Read the diff.** Claude Code shows you exactly what it plans to change. Make sure you understand the edit before accepting.
 - **Run the code yourself.** After Claude edits a chunk, run it to confirm it produces the output you expect.
 - **Verify statistical claims.** AI can make reasoning errors. Check coefficients, p-values, and interpretations against your own understanding.
+
+---
+
+## Claude Memory
+
+Claude Code can **remember things across sessions**. When you correct it, share a preference, or teach it something about your project, it can save that as a memory and recall it next time.
+
+- **User memories:** your role, preferences, and expertise level
+- **Project memories:** context about your codebase and ongoing work
+- **Feedback memories:** corrections you've given (e.g., "don't use that package")
+
+Type `/memory` in Claude Code to see what it has stored and toggle memory on or off.
+
+---
+
+## Where memory lives
+
+Memory files are plain markdown stored on your machine. You can read, edit, or delete them at any time. They are never uploaded or shared.
+
+| Location | What it contains |
+|---|---|
+| `~/.claude/CLAUDE.md` | Your instructions for all projects |
+| `.claude/CLAUDE.md` | Project-specific instructions (shareable via git) |
+| `~/.claude/projects/<name>/memory/` | Notes Claude writes itself from your sessions |
+
+---
+
+## Skills
+
+**Skills** are reusable prompt templates that work like custom slash commands.
+
+| Skill | What it does |
+|---|---|
+| `/memory` | View and manage memory files |
+| `/model` | Switch between available models |
+| `/simplify` | Review changed code for quality and efficiency |
+| `/compact` | Summarize the conversation to free up context |
+| `/init` | Generate a starting `CLAUDE.md` for your project |
+
+---
+
+## Custom skills
+
+You can create your own skills by adding a `SKILL.md` file to your project:
+
+- **Personal:** `~/.claude/skills/<name>/SKILL.md` (all your projects)
+- **Project:** `.claude/skills/<name>/SKILL.md` (shared via git)
+
+This workshop includes a `/modernize` skill that converts old R scripts to tidyverse style. Open `.claude/skills/modernize/SKILL.md` in the Explorer to see how it works, then try it: type `/modernize` in Claude Code.
+
+> Full docs: https://code.claude.com/docs/en/skills
 
 ---
 
