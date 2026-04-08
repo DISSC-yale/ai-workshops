@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-03-19'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-08'
 ---
 
 <style>table { width: 100%; }</style>
@@ -106,11 +106,38 @@ After saving, restart any open terminals or applications.
 
 ---
 
-## 6. Install Claude Code
+## 6a. Install Claude Code
 
 Follow the **Terminal** install instructions for your platform at https://code.claude.com/docs/en/overview
 
 Open a **new** terminal window so it picks up the credentials from Step 5, then verify the installation by running `claude --version`.
+
+---
+
+## 6b. Configure Claude Code safety settings (macOS)
+
+Claude Code can run commands on your computer. These settings add safety guardrails that reduce the risk of accidental file deletion, data loss, or changes outside your project.
+
+- Open **Finder** and press `Cmd + Shift + G` (Go to Folder)
+- Type `~/.claude` and press Enter
+  - If the folder doesn't exist: press `Cmd + Shift + G` again, type `~/`, press Enter, then create a new folder named `.claude` (`File > New Folder`)
+- From the workshop files you downloaded in Step 1, open `files > machine-setup > claude`
+- Copy `settings.json` into the `~/.claude` folder
+
+> Read `settings-README.md` in the same folder to learn what each setting does and how to customize them.
+
+---
+
+## 6b. Configure Claude Code safety settings (Windows)
+
+Claude Code can run commands on your computer. These settings add safety guardrails that reduce the risk of accidental file deletion, data loss, or changes outside your project.
+
+- Open **File Explorer** and type `%USERPROFILE%\.claude` in the address bar, then press Enter
+  - If the folder doesn't exist: navigate to `%USERPROFILE%`, then create a new folder named `.claude` (`Right-click > New > Folder`)
+- From the workshop files you downloaded in Step 1, open `files > machine-setup > claude`
+- Copy `settings.json` into the `.claude` folder
+
+> Read `settings-README.md` in the same folder to learn what each setting does and how to customize them.
 
 ---
 
