@@ -12,6 +12,42 @@ header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.
 
 These instructions cover macOS and Windows. Platform-specific steps are noted where they differ.
 
+**What we're installing and why:**
+
+- **R** — the programming language used throughout the workshop
+- **Claude Code** — an AI coding assistant that runs in your terminal
+- **Quarto** — a publishing system for creating documents that mix code, output, and narrative
+- **VS Code** — a code editor that ties everything together with extensions for R, Quarto, and more
+- **R packages** (`tidyverse`, `languageserver`) — libraries for data analysis and editor support
+
+---
+
+## How the pieces fit together 
+
+```
+┌──────────────────────────────────────────┐
+│              Your .qmd files             │
+│         (code + narrative together)      │
+└─────────┬────────────────────┬───────────┘
+          │ reads & writes     │ reads & writes
+          ▼                    ▼
+┌──────────────────┐  ┌──────────────────┐
+│     VS Code      │  │   Claude Code    │
+│  (code editor)   │  │  (AI assistant   │
+│                  │  │   in terminal)   │
+│  Edit files      │  │  Edit files      │
+│  Run Quarto      │  │  Answer questions│
+│  blocks for      │  │  Fix errors      │
+│  interactive     │  │  Write code      │
+│  analysis        │  │                  │
+└──────────────────┘  └──────────────────┘
+```
+
+---
+
+
+
+
 ---
 
 ## 1. Download workshop files
@@ -228,3 +264,8 @@ claude "What is 2 + 2?"
 ```
 
 You should see Claude respond with an answer.
+
+
+## 14. Config to restrict acces to ?
+
+Do we want to add a 14th step of setting up a config or do you think that belongs in 01. 
