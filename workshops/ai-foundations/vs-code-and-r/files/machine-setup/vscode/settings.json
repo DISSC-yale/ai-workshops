@@ -5,5 +5,7 @@
     "r.bracketedPaste": true,
     "r.session.levelOfObjectDetail": "Detailed",
     "r.lsp.diagnostics": true,
-    "r.rterm.option": ["--no-save", "--no-restore"]
+    "r.rterm.option": ["--no-save", "--no-restore"],
+    "r.plot.defaults.width": 800,
+    "r.plot.defaults.height": 500
 }
