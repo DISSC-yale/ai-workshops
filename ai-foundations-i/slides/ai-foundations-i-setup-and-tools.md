@@ -126,7 +126,7 @@ The sandbox starts with an empty `workspace/` folder. You need to copy the works
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then double-click to unzip)
 - Open the `ai-foundations-ii/vs-code-and-r/code/` folder
-- Select everything inside it (`example.qmd`, `data/`, `.claude/`) and copy it into the sandbox's `workspace/` folder
+- Select everything inside it (`example.qmd`, `data/`, `.claude/`, `.vscode/`) and copy it into the sandbox's `workspace/` folder
 - Also copy the `ai-foundations-ii/vs-code-and-r/prompts/` folder into `workspace/`
 
 ---
@@ -137,7 +137,7 @@ The sandbox starts with an empty `workspace/` folder. You need to copy the works
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then right-click > **Extract All**)
 - Open the `ai-foundations-ii\vs-code-and-r\code\` folder
-- Select everything inside it (`example.qmd`, `data\`, `.claude\`) and copy it into the sandbox's `workspace\` folder
+- Select everything inside it (`example.qmd`, `data\`, `.claude\`, `.vscode\`) and copy it into the sandbox's `workspace\` folder
 - Also copy the `ai-foundations-ii\vs-code-and-r\prompts\` folder into `workspace\`
 
 ---
