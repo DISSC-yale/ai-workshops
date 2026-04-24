@@ -10,7 +10,7 @@ header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.
 
 # AI Foundations I: Setup & Tools
 
-A secure, ready-to-use AI research environment, configured in nine steps.
+A secure, ready-to-use AI research environment, configured in ten steps.
 
 **Nicholas Warren**
 Lead, Artificial Intelligence & Machine Learning program, DISSC
@@ -98,9 +98,9 @@ After installation, make sure Docker Desktop is **running** (look for the whale 
 
 ---
 
-## 4. Download workshop files (macOS)
+## 4. Download the sandbox (macOS)
 
-- Go to the workshop page on GitHub (link provided by your instructor)
+- Go to https://github.com/DISSC-yale/claude-sandbox
 - Click the green **Code** button, then click **Download ZIP**
 - Find the downloaded `.zip` file (usually in your Downloads folder) and double-click it to unzip
 - Move the extracted folder to a location you'll remember (e.g., your Desktop or Documents folder)
@@ -109,9 +109,9 @@ After installation, make sure Docker Desktop is **running** (look for the whale 
 
 ---
 
-## 4. Download workshop files (Windows)
+## 4. Download the sandbox (Windows)
 
-- Go to the workshop page on GitHub (link provided by your instructor)
+- Go to https://github.com/DISSC-yale/claude-sandbox
 - Click the green **Code** button, then click **Download ZIP**
 - Find the downloaded `.zip` file (usually in your Downloads folder), right-click it, and select **Extract All**
 - Move the extracted folder to a location you'll remember (e.g., your Desktop or Documents folder)
@@ -120,13 +120,33 @@ After installation, make sure Docker Desktop is **running** (look for the whale 
 
 ---
 
-## 5. Request an API key
+## 5. Add workshop files to the sandbox (macOS)
 
-An **API key** is like a password that lets your computer connect to Claude. Email Nicholas Warren at DISSC (dissc@yale.edu) to request one. **Request this before the workshop;** you'll need the key in Step 6. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
+The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
+
+- Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then double-click to unzip)
+- Open the `workshops/ai-foundations/vs-code-and-r/files/code/` folder
+- Copy everything inside it (`example.qmd`, `data/`, `.claude/`) into the sandbox's `workspace/` folder
 
 ---
 
-## 6. Configure credentials (macOS)
+## 5. Add workshop files to the sandbox (Windows)
+
+The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
+
+- Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then right-click > **Extract All**)
+- Open the `workshops\ai-foundations\vs-code-and-r\files\code\` folder
+- Copy everything inside it (`example.qmd`, `data\`, `.claude\`) into the sandbox's `workspace\` folder
+
+---
+
+## 6. Request an API key
+
+An **API key** is like a password that lets your computer connect to Claude. Email Nicholas Warren at DISSC (dissc@yale.edu) to request one. **Request this before the workshop;** you'll need the key in Step 7. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
+
+---
+
+## 7. Configure credentials (macOS)
 
 Your computer needs to know your API key so it can pass it to Claude inside the container. We'll save it in a startup file that your Mac reads every time you open a terminal.
 
@@ -140,9 +160,9 @@ This opens a simple text editor called **nano**. (The file `~/.zprofile` is a hi
 
 ---
 
-## 6. Configure credentials (macOS, continued)
+## 7. Configure credentials (macOS, continued)
 
-In the nano editor, type (or paste) these three lines. Replace `TOKEN_HERE` with the API key you received in Step 5:
+In the nano editor, type (or paste) these three lines. Replace `TOKEN_HERE` with the API key you received in Step 6:
 
 ```
 export AWS_REGION="us-east-1"
@@ -154,7 +174,7 @@ To save: press `Ctrl+O` (that's the **Control** key, not Command, plus the lette
 
 ---
 
-## 6. Configure credentials (macOS, continued)
+## 7. Configure credentials (macOS, continued)
 
 Back in Terminal, run this command to apply your changes immediately:
 
@@ -168,7 +188,7 @@ source ~/.zprofile
 
 ---
 
-## 6. Configure credentials (Windows)
+## 7. Configure credentials (Windows)
 
 Your computer needs to know your API key so it can pass it to Claude inside the container. Windows stores these as **environment variables**, named settings that programs can read.
 
@@ -177,12 +197,12 @@ Click the Start menu, type `environment variables`, and select **Edit environmen
 | Variable name | Value |
 |---|---|
 | `AWS_REGION` | `us-east-1` |
-| `AWS_BEARER_TOKEN_BEDROCK` | your API key from Step 5 |
+| `AWS_BEARER_TOKEN_BEDROCK` | your API key from Step 6 |
 | `CLAUDE_CODE_USE_BEDROCK` | `1` |
 
 ---
 
-## 6. Configure credentials (Windows, continued)
+## 7. Configure credentials (Windows, continued)
 
 Click **OK** to close the dialog. Then **restart** any open terminals or applications so they pick up the new settings.
 
@@ -190,17 +210,17 @@ Click **OK** to close the dialog. Then **restart** any open terminals or applica
 
 ---
 
-## 7. Open the workshop in a container
+## 8. Open the workshop in a container
 
 - Open **VS Code**
-- Go to `File > Open Folder` and select the workshop folder you extracted in Step 4
+- Go to `File > Open Folder` and select the sandbox folder you extracted in Step 4
 - When VS Code prompts **"Reopen in Container?"**, click **Yes**
 
 > If the prompt doesn't appear, press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows), type `Reopen in Container`, and select it.
 
 ---
 
-## 7. Open the workshop in a container (continued)
+## 8. Open the workshop in a container (continued)
 
 The first build takes **15–25 minutes** because it installs and compiles R packages. Subsequent opens are fast (a few seconds). A log will appear showing setup progress; you can let it run in the background.
 
@@ -208,7 +228,7 @@ Once it finishes, close that log tab and open a fresh terminal inside VS Code wi
 
 ---
 
-## 8. Install VS Code extensions
+## 9. Install VS Code extensions
 
 You're now working inside the container. R and Python are already installed, but you need two VS Code extensions that add R and Quarto support:
 
@@ -218,7 +238,7 @@ You're now working inside the container. R and Python are already installed, but
 
 ---
 
-## 9. Verify your setup
+## 10. Verify your setup
 
 In the container's terminal, start Claude Code:
 
@@ -230,7 +250,7 @@ Then ask a test question: `What is 2 + 2?`
 
 You should see Claude respond with an answer. Type `/exit` to quit Claude Code.
 
-> **If it doesn't work:** Make sure Docker Desktop is running and your credentials are saved (Step 6).
+> **If it doesn't work:** Make sure Docker Desktop is running and your credentials are saved (Step 7).
 
 ---
 

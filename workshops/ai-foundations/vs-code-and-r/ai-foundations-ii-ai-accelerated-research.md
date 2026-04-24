@@ -271,7 +271,7 @@ Then try a follow-up:
 ## Troubleshooting
 
 - **Container won't build:** Make sure Docker Desktop is running. On Windows, confirm WSL 2 is installed (Foundations I, Step 1). Try `Cmd/Ctrl+Shift+P` > "Rebuild Container Without Cache."
-- **Claude Code not responding:** Check that your credentials are set (Foundations I, Step 6). Close VS Code and reopen it to pick up your API key.
+- **Claude Code not responding:** Check that your credentials are set (Foundations I, Step 7). Close VS Code and reopen it to pick up your API key.
 
 ---
 
