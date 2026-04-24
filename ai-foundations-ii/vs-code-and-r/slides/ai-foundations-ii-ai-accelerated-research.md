@@ -49,6 +49,8 @@ It can:
 - Click the **Run Cell** button (the play icon ▶ that appears above each code chunk) to run it
 - Output (plots, tables, text) appears directly below each chunk
 
+> For extra prompt ideas throughout the session, see `prompts/examples.md` in the Explorer.
+
 ---
 
 ## Start Claude Code
@@ -59,7 +61,7 @@ Open a **new terminal** in VS Code (`` Ctrl + ` `` or `Terminal > New Terminal`)
 claude
 ```
 
-This starts a conversation with Claude. You type messages and Claude responds. Useful commands:
+This starts a conversation with Claude. You type messages and Claude responds. To start a new session later, just type `claude` again in the terminal. Useful commands:
 
 | Command | Action | Command | Action |
 |---|---|---|---|
@@ -191,6 +193,12 @@ This workshop includes a `/modernize` skill that converts old-style R code to mo
 
 ---
 
+# Hands-on exercises
+
+We'll work through a real dataset using four phases: explore the research question, write code, iterate on the analysis, and debug. Open `example.qmd` and make sure Claude Code is running.
+
+---
+
 # Phase 1: Concept & Idea Generation
 
 Use Claude Code to explore the research question **before writing any code**.
@@ -209,7 +217,7 @@ Ask Claude Code to write the import code. It can edit the notebook directly.
 
 > Read in data/organ_donations.csv and prepare it for a DiD analysis. Write the code in the Phase 2 section of example.qmd.
 
-Run the chunks Claude creates to verify they work.
+Run the chunks Claude creates. You should see 162 rows with columns including `treated_state` (California vs. Control) and `post` (TRUE/FALSE). Phase 3's code depends on these exact names.
 
 ---
 
@@ -263,7 +271,7 @@ Then try a follow-up:
 
 - **Start broad, then narrow.** Begin with conceptual questions ("What is DiD?"), then move to specific code requests ("Add clustered standard errors").
 - **One task at a time.** Shorter, focused requests produce better results than long, multi-part ones.
-- **Save your work.** Ask Claude to help you set up version control so you can track changes and undo mistakes: "Initialize a git repo and commit the current state."
+- **Save your work.** Before making major changes, duplicate your notebook as a backup. For a more robust approach, ask Claude: "Help me set up version control so I can track changes and undo mistakes." It will walk you through the process.
 - **Trust but verify.** Claude is a powerful tool, not a replacement for your domain expertise. Always review its output critically.
 
 ---
