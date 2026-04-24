@@ -1,6 +1,6 @@
 # Example Prompts for Claude Code
 
-Type these prompts directly into Claude Code. They follow the four phases of the workshop and build on `files/code/example.qmd`.
+Type these prompts directly into Claude Code. They follow the four phases of the workshop and build on `example.qmd`.
 
 ---
 
@@ -25,7 +25,7 @@ I have organ donation rate data for 27 states across 6 quarters. California intr
 ### 3. Import and prepare data
 
 ```
-Read in data/organ_donations.csv and prepare it for a DiD analysis. Write the code in the Phase 2 section of files/code/example.qmd.
+Read in data/organ_donations.csv and prepare it for a DiD analysis. Write the code in the Phase 2 section of example.qmd.
 ```
 
 ### 4. Preview the data
@@ -81,7 +81,7 @@ Save the regression results and the plot from example.qmd to an output/ folder. 
 ### 11. Find and fix bugs
 
 ```
-Look at the Phase 4 section of files/code/example.qmd. Each chunk has one or more bugs. Find and fix all of them.
+Look at the Phase 4 section of example.qmd. Each chunk has one or more bugs. Find and fix all of them.
 ```
 
 ### 12. Explain what went wrong
