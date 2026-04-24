@@ -2,7 +2,7 @@
     "files.associations": {
         "renv.lock": "json"
     },
-    "r.bracketedPaste": true,
+    "r.bracketedPaste": false,
     "r.session.levelOfObjectDetail": "Detailed",
     "r.lsp.diagnostics": true,
     "r.rterm.option": ["--no-save", "--no-restore"],
