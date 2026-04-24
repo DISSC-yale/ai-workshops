@@ -125,8 +125,9 @@ After installation, make sure Docker Desktop is **running** (look for the whale 
 The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then double-click to unzip)
-- Open the `workshops/ai-foundations/vs-code-and-r/files/code/` folder
-- Copy everything inside it (`example.qmd`, `data/`, `.claude/`) into the sandbox's `workspace/` folder
+- Open the `ai-foundations-ii/vs-code-and-r/code/` folder
+- Select everything inside it (`example.qmd`, `data/`, `.claude/`) and copy it into the sandbox's `workspace/` folder
+- Also copy the `ai-foundations-ii/vs-code-and-r/prompts/` folder into `workspace/`
 
 ---
 
@@ -135,8 +136,9 @@ The sandbox starts with an empty `workspace/` folder. You need to copy the works
 The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then right-click > **Extract All**)
-- Open the `workshops\ai-foundations\vs-code-and-r\files\code\` folder
-- Copy everything inside it (`example.qmd`, `data\`, `.claude\`) into the sandbox's `workspace\` folder
+- Open the `ai-foundations-ii\vs-code-and-r\code\` folder
+- Select everything inside it (`example.qmd`, `data\`, `.claude\`) and copy it into the sandbox's `workspace\` folder
+- Also copy the `ai-foundations-ii\vs-code-and-r\prompts\` folder into `workspace\`
 
 ---
 
