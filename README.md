@@ -14,13 +14,12 @@ Install Docker, VS Code, and Claude Code. Understand how containers, terminals, 
 **AI Foundations II: AI-Accelerated Research**
 Use Claude Code to explore a research question, write and iterate on R code, build visualizations, and debug. Covers prompt writing, model selection, memory, custom skills, container safety, and best practices for AI-powered workflows.
 
-Currently active with [VS Code + R](workshops/ai-foundations/vs-code-and-r/). Adaptable to Python and Stata. An earlier [Positron + R](workshops/ai-foundations/positron-and-r/) version is archived for reference.
+Currently active with [VS Code + R](ai-foundations-ii/vs-code-and-r/). Adaptable to Python and Stata. An earlier [Positron + R](archive/positron-and-r/) version is archived for reference.
 
 ## Getting Started
 
-1. Click the green **Code** button at the top of this page, then click **Download ZIP**
-2. Extract the folder and open the relevant workshop directory above
-3. Follow the setup instructions (AI Foundations I) and work through the exercises (AI Foundations II)
+1. Download the [claude-sandbox](https://github.com/DISSC-yale/claude-sandbox) and follow [AI Foundations I](ai-foundations-i/slides/ai-foundations-i-setup-and-tools.pdf) to set up your environment
+2. Choose your language and work through [AI Foundations II](ai-foundations-ii/)
 
 ## Contact
 
