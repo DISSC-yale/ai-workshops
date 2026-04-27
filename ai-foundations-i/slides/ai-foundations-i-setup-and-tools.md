@@ -3,14 +3,14 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-22'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-27'
 ---
 
 <style>table { width: 100%; }</style>
 
 # AI Foundations I: Setup & Tools
 
-A secure, ready-to-use AI research environment, configured in ten steps.
+A secure, ready-to-use AI research environment, configured with a setup wizard.
 
 **Nicholas Warren**
 Lead, Artificial Intelligence & Machine Learning program, DISSC
@@ -45,197 +45,153 @@ These instructions cover macOS and Windows. Follow only the slides for your plat
 
 ---
 
-## 1. Install Docker Desktop
+## 1. Install Node.js
 
-**Docker** runs the workshop environment in an isolated container with R, Python, and Claude Code pre-installed. You won't need to install those tools yourself.
+**Node.js** is needed to run the setup wizard.
 
-Download Docker Desktop from https://www.docker.com/products/docker-desktop/
-
----
-
-## 1. Install Docker Desktop (macOS)
-
-Open the downloaded `.dmg` file, drag Docker to your Applications folder, then launch it from Applications and complete the setup wizard.
-
-After installation, make sure Docker Desktop is **running** (look for the whale icon in your menu bar at the top of the screen).
-
----
-
-## 1. Install Docker Desktop (Windows)
-
-**Prerequisite:** Docker Desktop requires **WSL 2** (Windows Subsystem for Linux). If you haven't installed it before, open **PowerShell as Administrator** (Start menu, type `PowerShell`, right-click on **Windows PowerShell** in the results, and select **Run as administrator**) and run:
+**macOS**, recommended via [Homebrew](https://brew.sh):
 
 ```
-wsl --install
+brew install node
 ```
 
-Restart your computer when prompted. This only needs to be done once.
+**Windows**, recommended via **winget** (preinstalled on Windows 10/11):
+
+```
+winget install OpenJS.NodeJS.LTS
+```
+
+> **No package manager?** Download the **LTS** installer from https://nodejs.org/ instead. On Windows, keep the default options (including "Add to PATH").
 
 ---
 
-## 1. Install Docker Desktop (Windows, continued)
+## 1. Install Node.js (verify)
 
-After the restart (or if WSL 2 is already installed), run the Docker Desktop installer and restart your computer if prompted.
+After installation, open a **new terminal** and verify:
 
-After installation, make sure Docker Desktop is **running** (look for the whale icon in the system tray at the bottom-right of your screen).
+```
+node --version
+```
 
----
-
-## 2. Install VS Code (macOS)
-
-**Visual Studio Code (VS Code)** is a free code editor made by Microsoft. We use it as the main working environment for the workshop.
-
-- Download from https://code.visualstudio.com/
-- Open the downloaded `.zip` file, then drag **Visual Studio Code** to your Applications folder
+You should see a version number like `v22.x.x`.
 
 ---
 
-## 2. Install VS Code (Windows)
+## 2. Request an API key
 
-**Visual Studio Code (VS Code)** is a free code editor made by Microsoft. We use it as the main working environment for the workshop.
+An **API key** is like a password that lets your computer connect to Claude. Email Nicholas Warren at DISSC (dissc@yale.edu) to request one. **Request this before the workshop;** you'll need the key in Step 3. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
 
-- Download from https://code.visualstudio.com/
-- Run the downloaded installer and follow the prompts (keep the default options, including "Add to PATH")
-
----
-
-## 3. Install the Dev Containers extension
-
-**Extensions** are add-ons that give VS Code new features (similar to browser extensions or phone apps). The **Dev Containers** extension lets VS Code open projects inside Docker containers.
-
-- Open VS Code
-- Click the **Extensions** icon in the left sidebar (it looks like four small squares; or press `Cmd+Shift+X` on macOS / `Ctrl+Shift+X` on Windows)
-- Search for **Dev Containers** by Microsoft and click **Install**
+> **Treat your API key like a password.** Do not share it or post it anywhere.
 
 ---
 
-## 4. Download the sandbox (macOS)
+## 3. Run the setup wizard
 
-- Go to https://github.com/DISSC-yale/claude-sandbox
-- Click the green **Code** button, then click **Download ZIP**
-- Find the downloaded `.zip` file (usually in your Downloads folder) and double-click it to unzip
-- Move the extracted folder to a location you'll remember (e.g., your Desktop or Documents folder)
+The setup wizard checks your machine for required tools, configures authentication, and downloads the sandbox environment.
 
-> You do not need Git installed. The ZIP download includes everything you need.
+Open **Terminal** (macOS) or **PowerShell** (Windows) and move to the folder where you want your project to live (Desktop works well):
 
----
+```
+cd ~/Desktop
+```
 
-## 4. Download the sandbox (Windows)
+Then run the wizard (replace `my-workshop` with any name you like):
 
-- Go to https://github.com/DISSC-yale/claude-sandbox
-- Click the green **Code** button, then click **Download ZIP**
-- Find the downloaded `.zip` file (usually in your Downloads folder), right-click it, and select **Extract All**
-- Move the extracted folder to a location you'll remember (e.g., your Desktop or Documents folder)
+```
+npm create @yale-dissc/agent-sandbox@latest my-workshop
+```
 
-> You do not need Git installed. The ZIP download includes everything you need.
+> The wizard creates a folder with that name in your current directory.
 
 ---
 
-## 5. Add workshop files to the sandbox (macOS)
+## 3. Run the setup wizard (dependency check)
 
-The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
+The wizard checks for Git, Docker Desktop, VS Code, and the Dev Containers extension:
+
+- For **Git, Docker, or VS Code**: the wizard opens the download page in your browser. Install manually, then press Enter to continue.
+- For the **Dev Containers extension**: the wizard offers to install it for you. Accept the default (**Yes**) and it installs automatically.
+
+---
+
+## 3. Run the setup wizard (dependency notes)
+
+> **Windows:** Docker Desktop requires **WSL 2**. If Docker fails to install, open **PowerShell as Administrator**, run `wsl --install`, restart, then re-run the wizard.
+
+> **macOS:** If the wizard says VS Code isn't installed but you already installed it, the `code` command isn't on your PATH. Open VS Code, press `Cmd+Shift+P`, type "shell command", and select **Shell Command: Install 'code' command in PATH**. Then re-run the wizard.
+
+---
+
+## 3. Run the setup wizard (authentication)
+
+When prompted for authentication mode, choose **Anthropic via AWS Bedrock**.
+
+Enter the following when asked:
+
+- **AWS region:** `us-east-1`
+- **Bedrock bearer token:** paste the API key from Step 2
+- **Default Opus model:** keep the default
+
+The wizard saves these to your shell configuration and creates a timestamped backup of any existing config.
+
+> You will see a preview of the changes before anything is written. Type `Y` to confirm.
+
+---
+
+## 3. Run the setup wizard (languages)
+
+**Language selection:** Use the **spacebar** to toggle **R** on (and optionally Python), then press Enter. Nothing is selected by default, so you must actively toggle your choices.
+
+> **First build time with R:** 15–25 minutes. Without R (Node only): 2–5 minutes.
+
+---
+
+## 3. Run the setup wizard (finish)
+
+The wizard then:
+
+- Downloads the sandbox template into your project folder
+- Edits the container configuration to match your language selection
+- Asks about Git and GitHub: **choose "No"** for the workshop (you'll add workshop files before initializing git in Step 4)
+- Asks "Open the project in VS Code now?": **choose "No"** (VS Code would immediately prompt to reopen in a container, but your `workspace/` is still empty)
+
+---
+
+## 4. Add workshop files (macOS)
+
+Now add the workshop materials to the empty `workspace/` folder the wizard created:
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then double-click to unzip)
 - Open the `ai-foundations-ii/vs-code-and-r/code/` folder
 - **Important:** Some folders start with a dot (`.claude/`, `.vscode/`) and may be hidden. Press `Cmd+Shift+.` in Finder to show them.
-- Select everything inside it and copy it into the sandbox's `workspace/` folder
+- Select everything inside it and copy it into your project's `workspace/` folder
 - Also copy the `ai-foundations-ii/vs-code-and-r/prompts/` folder into `workspace/`
 
 ---
 
-## 5. Add workshop files to the sandbox (Windows)
+## 4. Add workshop files (Windows)
 
-The sandbox starts with an empty `workspace/` folder. You need to copy the workshop files into it.
+Now add the workshop materials to the empty `workspace\` folder the wizard created:
 
 - Download the workshop files from https://github.com/DISSC-yale/ai-workshops (green **Code** button > **Download ZIP**, then right-click > **Extract All**)
 - Open the `ai-foundations-ii\vs-code-and-r\code\` folder
 - **Important:** Some folders start with a dot (`.claude\`, `.vscode\`) and may be hidden. In File Explorer, click **View** > **Show** > **Hidden items**.
-- Select everything inside it and copy it into the sandbox's `workspace\` folder
+- Select everything inside it and copy it into your project's `workspace\` folder
 - Also copy the `ai-foundations-ii\vs-code-and-r\prompts\` folder into `workspace\`
 
 ---
 
-## 6. Request an API key
+## 5. Open the project in VS Code
 
-An **API key** is like a password that lets your computer connect to Claude. Email Nicholas Warren at DISSC (dissc@yale.edu) to request one. **Request this before the workshop;** you'll need the key in Step 7. This key will expire after the workshop. For long-term access, contact dissc@yale.edu.
+Open VS Code, go to **File > Open Folder**, and select the project folder the wizard created (the one containing `workspace/` and `.devcontainer/`, not `workspace/` itself).
 
----
-
-## 7. Configure credentials (macOS)
-
-Your computer needs to know your API key so it can pass it to Claude inside the container. We'll save it in a startup file that your Mac reads every time you open a terminal.
-
-Open **Terminal** (`Cmd+Space`, type `Terminal`, press `Enter`). Then type the following command and press `Enter`:
-
-```
-nano ~/.zprofile
-```
-
-This opens a simple text editor called **nano**. (The file `~/.zprofile` is a hidden settings file in your home folder; `~/` means "my home folder".)
-
----
-
-## 7. Configure credentials (macOS, continued)
-
-In the nano editor, type (or paste) these three lines. Replace `TOKEN_HERE` with the API key you received in Step 6:
-
-```
-export AWS_REGION="us-east-1"
-export AWS_BEARER_TOKEN_BEDROCK="TOKEN_HERE"
-export CLAUDE_CODE_USE_BEDROCK=1
-```
-
-To save: press `Ctrl+O` (that's the **Control** key, not Command, plus the letter O), then press `Enter`. To exit: press `Ctrl+X`.
-
----
-
-## 7. Configure credentials (macOS, continued)
-
-Back in Terminal, run this command to apply your changes immediately:
-
-```
-source ~/.zprofile
-```
-
-> If your Mac uses `bash` instead of `zsh` (you can check by running `echo $SHELL`), use `~/.bash_profile` instead of `~/.zprofile` in all of the steps above.
-
-> **Treat your API key like a password.** Do not share it or post it anywhere.
-
----
-
-## 7. Configure credentials (Windows)
-
-Your computer needs to know your API key so it can pass it to Claude inside the container. Windows stores these as **environment variables**, named settings that programs can read.
-
-Click the Start menu, type `environment variables`, and select **Edit environment variables for your account**. Under **User variables**, click **New** to add each of these three entries (click **New**, type the name and value, click **OK**, then repeat):
-
-| Variable name | Value |
-|---|---|
-| `AWS_REGION` | `us-east-1` |
-| `AWS_BEARER_TOKEN_BEDROCK` | your API key from Step 6 |
-| `CLAUDE_CODE_USE_BEDROCK` | `1` |
-
----
-
-## 7. Configure credentials (Windows, continued)
-
-Click **OK** to close the dialog. Then **restart** any open terminals or applications so they pick up the new settings.
-
-> **Treat your API key like a password.** Do not share it or post it anywhere.
-
----
-
-## 8. Open the workshop in a container
-
-- Open **VS Code**
-- Go to `File > Open Folder` and select the sandbox folder you extracted in Step 4
-- When VS Code prompts **"Reopen in Container?"**, click **Yes**
+When VS Code prompts **"Reopen in Container?"**, click **Yes**.
 
 > If the prompt doesn't appear, press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows), type `Reopen in Container`, and select it.
 
 ---
 
-## 8. Open the workshop in a container (continued)
+## 5. Open the project in VS Code (first build)
 
 The first build takes **15–25 minutes** because it installs and compiles R packages. Subsequent opens are fast (a few seconds). A log will appear showing setup progress; you can let it run in the background.
 
@@ -243,7 +199,7 @@ Once it finishes, close that log tab and open a fresh terminal inside VS Code wi
 
 ---
 
-## 9. Install VS Code extensions
+## 6. Install VS Code extensions
 
 You're now working inside the container. R and Python are already installed, but you need two VS Code extensions that add R and Quarto support:
 
@@ -253,7 +209,7 @@ You're now working inside the container. R and Python are already installed, but
 
 ---
 
-## 10. Verify your setup
+## 7. Verify your setup
 
 In the container's terminal, start Claude Code:
 
@@ -261,11 +217,11 @@ In the container's terminal, start Claude Code:
 claude
 ```
 
-Then ask a test question: `What is 2 + 2?`
+Run `/model` to confirm Claude is using the Bedrock-backed Opus model. Then ask a test question: `What is 2 + 2?`
 
 You should see Claude respond with an answer. Type `/exit` to quit Claude Code.
 
-> **If it doesn't work:** Make sure Docker Desktop is running and your credentials are saved (Step 7).
+> **If it doesn't work:** Make sure Docker Desktop is running. If VS Code was already open when the wizard saved your credentials, fully quit and relaunch it so it picks up the new environment variables.
 
 ---
 
@@ -383,11 +339,12 @@ In short: you get the full power of Claude without your research data leaving Ya
 
 | Tool | What it is |
 |---|---|
-| **Docker** | Creates the self-contained workshop environment with all tools pre-installed. |
-| **VS Code** | A free code editor from Microsoft. Your main working environment. |
-| **Dev Containers** | A VS Code add-on (extension) that connects VS Code to Docker containers. |
-| **AWS Bedrock** | Amazon's AI service. Your requests to Claude go through Yale's AWS account. |
-| **API key** | A password-like key that proves you're authorized to use Claude. |
+| **Docker** | Creates the self-contained workshop environment. |
+| **VS Code** | Microsoft's free code editor. Your main working environment. |
+| **Dev Containers** | VS Code extension that connects VS Code to Docker containers. |
+| **Setup wizard** | Checks your machine, configures credentials, downloads the sandbox. |
+| **AWS Bedrock** | Amazon's AI service. Routes Claude requests via Yale's AWS. |
+| **API key** | Password-like key that proves you're authorized to use Claude. |
 
 ---
 
@@ -395,10 +352,10 @@ In short: you get the full power of Claude without your research data leaving Ya
 
 Each sandbox is meant for a single project. Claude operates on the entire `workspace/` folder, so mixing unrelated files risks unintended changes across projects.
 
-To start a new project, **duplicate the entire sandbox folder** and rename the copy (e.g., `my-project-name`). Each copy runs its own isolated container with its own `workspace/`.
+To start a new project, run the setup wizard again with a different name:
 
----
+```
+npm create @yale-dissc/agent-sandbox@latest my-next-project
+```
 
-## Using the sandbox without R or Python
-
-This workshop uses R, but the sandbox also works as a general-purpose Claude Code environment. If you want a lighter container for non-R projects, see the **"Customizing the Container"** section of the sandbox's `README.md` for instructions on removing R and Python. This shrinks the image and speeds up the first build.
+Each project gets its own folder, container, and `workspace/`.

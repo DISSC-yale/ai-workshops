@@ -18,7 +18,7 @@ An earlier [Positron + R](archive/positron-and-r/) version is archived for refer
 
 ## Getting Started
 
-1. Download the [claude-sandbox](https://github.com/DISSC-yale/claude-sandbox) and follow [AI Foundations I](ai-foundations-i/slides/ai-foundations-i-setup-and-tools.pdf) to set up your environment
+1. Follow [AI Foundations I](ai-foundations-i/slides/ai-foundations-i-setup-and-tools.pdf) to set up your environment using the [agent-sandbox](https://github.com/DISSC-yale/agent-sandbox) setup wizard
 2. Choose your language and work through [AI Foundations II](ai-foundations-ii/)
 
 ## Contact
