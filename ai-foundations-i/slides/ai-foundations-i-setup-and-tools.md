@@ -138,9 +138,9 @@ For auth mode, **arrow down** to **Anthropic via AWS Bedrock** (Claude.ai is def
 
 ## 3. Run the setup wizard (languages)
 
-**Language selection:** Use the **spacebar** to toggle **R** on (and optionally Python), then press Enter. Nothing is selected by default, so you must actively toggle your choices.
+At the language prompt, press the **spacebar** to select **R + tidyverse + languageserver**, then press Enter. Nothing is selected by default — if you skip this step, R won't be installed.
 
-> **First build time with R:** 15–30 minutes. Without R (Node only): 2–5 minutes.
+> **First build time with R:** 15–30 minutes.
 
 ---
 
