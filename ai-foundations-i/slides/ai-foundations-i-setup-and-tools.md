@@ -89,15 +89,11 @@ An **API key** is like a password that lets your computer connect to Claude. Ema
 
 ## 3. Run the setup wizard
 
-The setup wizard checks your machine for required tools, configures authentication, and downloads the sandbox environment.
-
-Open **Terminal** (macOS) or **PowerShell** (Windows) and move to the folder where you want your project to live. Desktop works well on either platform:
+Open **Terminal** (macOS) or **PowerShell** (Windows) and move to the folder where you want your project to live:
 
 ```
 cd ~/Desktop
 ```
-
-> `~` expands to your home folder in both zsh (macOS) and PowerShell (Windows), so the same command works on both.
 
 Then run the wizard (replace `my-workshop` with any name you like):
 
@@ -105,7 +101,7 @@ Then run the wizard (replace `my-workshop` with any name you like):
 npm create @yale-dissc/agent-sandbox@latest my-workshop
 ```
 
-> The wizard creates a folder with that name in your current directory.
+> `~` works in both zsh (macOS) and PowerShell (Windows). The wizard creates a folder with your chosen name in the current directory.
 
 ---
 
