@@ -83,12 +83,12 @@ This gives you the most capable model with the highest-quality reasoning. If you
 
 ## Two terminals, two tools
 
-VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
+You'll use two terminals in the bottom Panel:
 
-- **R Terminal**: runs R code. Use it for `library()`, running code chunks, and interactive R work. Click `R: (not attached)` in the bottom status bar (the very bottom edge of the VS Code window) to start it.
-- **Terminal**: a general-purpose terminal running inside the container (zsh on both macOS and Windows hosts, since the container is Linux). This is where you run `claude` to start Claude Code.
+- **R Terminal**: runs R code (`library()`, code chunks, interactive work). Click `R: (not attached)` in the bottom status bar to start it.
+- **Terminal**: a general-purpose shell inside the container. This is where you run `claude`.
 
-To switch between them, click the **dropdown arrow** next to the terminal name at the top of the bottom panel (it might say "R Interactive" or "zsh"). You can also click the **+** icon to open a new terminal.
+> Switch between them via the **dropdown arrow** at the top of the Panel, or click **+** to open another.
 
 ---
 

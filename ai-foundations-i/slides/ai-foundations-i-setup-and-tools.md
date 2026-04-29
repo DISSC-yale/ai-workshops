@@ -116,27 +116,23 @@ The wizard checks for Git, Docker Desktop, VS Code, and the Dev Containers exten
 
 ## 3. Run the setup wizard (dependency notes)
 
-> **Windows — Docker needs WSL 2:** If Docker Desktop fails to install, open **PowerShell as Administrator**, run `wsl --install`, restart your computer, then re-run the wizard.
+If the wizard gets stuck on a missing dependency, one of these usually fixes it:
 
-> **Windows — VS Code not detected:** If the wizard says VS Code isn't installed but you already installed it, the `code` command isn't on your PATH. Reinstall VS Code and tick **"Add to PATH"** during setup, or restart your terminal. Then re-run the wizard.
-
-> **macOS — VS Code not detected:** Same issue, different fix. Open VS Code, press `Cmd+Shift+P`, type "shell command", and select **Shell Command: Install 'code' command in PATH**. Then re-run the wizard.
+- **Windows — Docker:** Requires WSL 2. Run `wsl --install` in **PowerShell as Administrator**, restart, then re-run the wizard.
+- **Windows — VS Code:** Reinstall with **"Add to PATH"** ticked, or restart your terminal.
+- **macOS — VS Code:** In VS Code, `Cmd+Shift+P` > **Shell Command: Install 'code' command in PATH**.
 
 ---
 
 ## 3. Run the setup wizard (authentication)
 
-When prompted for authentication mode, **arrow down** and select **Anthropic via AWS Bedrock** (Claude.ai is the default, but this workshop uses Bedrock), then press Enter.
-
-Enter the following when asked:
+For auth mode, **arrow down** to **Anthropic via AWS Bedrock** (Claude.ai is default) and press Enter. Then:
 
 - **AWS region:** keep the default (`us-east-1`)
 - **Bedrock bearer token:** paste the API key from Step 2
 - **Default Opus model:** keep the default (`anthropic.claude-opus-4-7`)
 
-The wizard saves these to your shell configuration and creates a timestamped backup of any existing config.
-
-> You will see a preview of the changes before anything is written. Type `Y` to confirm.
+> The wizard previews the changes and backs up your existing shell config before writing. Type `Y` to confirm.
 
 ---
 
