@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-22'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-28'
 ---
 
 <style>table { width: 100%; }</style>
@@ -73,7 +73,7 @@ This starts a conversation with Claude. You type messages and Claude responds. T
 
 ## Select the right model
 
-Once Claude Code is running, type `/model` and select **Opus 4.6** from the list. Use the **up/down arrow keys** to choose the model, then use the **left/right arrow keys** to set the thinking level to **max**. Press `Enter` to confirm.
+Once Claude Code is running, type `/model` and select **Opus 4.7** from the list. Use the **up/down arrow keys** to choose the model, then use the **left/right arrow keys** to set the thinking level to **max**. Press `Enter` to confirm.
 
 This gives you the most capable model with the highest-quality reasoning. If you skip this step, Claude Code may default to a less capable model.
 
@@ -307,7 +307,6 @@ This workshop was developed with contributions from:
 
 - **Maurice Dalton** and the Data Engineering and Solution Team, DISSC
 - **Data-Intensive Social Science Center (DISSC)**
-- **Poorvu Center for Teaching and Learning**
 - **Yale University Library**
 
 And thank you to all participants whose questions and feedback continue to shape these materials.

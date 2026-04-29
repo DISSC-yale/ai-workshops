@@ -3,7 +3,7 @@ marp: true
 theme: yale-dissc
 paginate: true
 footer: '![w:80](../../assets/Yale-logo.png)'
-header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-27'
+header: 'Data-Intensive Social Science Center (DISSC) |&nbsp;https://dissc.yale.edu&nbsp;|&nbsp;v.2026-04-28'
 ---
 
 <style>table { width: 100%; }</style>
@@ -124,13 +124,13 @@ The wizard checks for Git, Docker Desktop, VS Code, and the Dev Containers exten
 
 ## 3. Run the setup wizard (authentication)
 
-When prompted for authentication mode, choose **Anthropic via AWS Bedrock**.
+When prompted for authentication mode, **arrow down** and select **Anthropic via AWS Bedrock** (Claude.ai is the default, but this workshop uses Bedrock), then press Enter.
 
 Enter the following when asked:
 
-- **AWS region:** `us-east-1`
+- **AWS region:** keep the default (`us-east-1`)
 - **Bedrock bearer token:** paste the API key from Step 2
-- **Default Opus model:** keep the default
+- **Default Opus model:** keep the default (`anthropic.claude-opus-4-7`)
 
 The wizard saves these to your shell configuration and creates a timestamped backup of any existing config.
 
@@ -142,7 +142,7 @@ The wizard saves these to your shell configuration and creates a timestamped bac
 
 **Language selection:** Use the **spacebar** to toggle **R** on (and optionally Python), then press Enter. Nothing is selected by default, so you must actively toggle your choices.
 
-> **First build time with R:** 15–25 minutes. Without R (Node only): 2–5 minutes.
+> **First build time with R:** 15–30 minutes. Without R (Node only): 2–5 minutes.
 
 ---
 
@@ -193,19 +193,22 @@ When VS Code prompts **"Reopen in Container?"**, click **Yes**.
 
 ## 5. Open the project in VS Code (first build)
 
-The first build takes **15–25 minutes** because it installs and compiles R packages. Subsequent opens are fast (a few seconds). A log will appear showing setup progress; you can let it run in the background.
+The first build takes **15–30 minutes** because it installs and compiles R packages. Subsequent opens are fast (a few seconds). A log will appear showing setup progress; you can let it run in the background.
 
 Once it finishes, close that log tab and open a fresh terminal inside VS Code with `` Ctrl+` `` (that's the backtick key, usually above Tab).
 
 ---
 
-## 6. Install VS Code extensions
+## 6. Verify your extensions
 
-You're now working inside the container. R and Python are already installed, but you need two VS Code extensions that add R and Quarto support:
+You're now working inside the container. Because you toggled **R** in the language prompt, the wizard pre-installed R, the `tidyverse` / `languageserver` R packages, and the **R + Quarto VS Code extensions** as part of the container build.
+
+Confirm the extensions are there:
 
 - Click the **Extensions** icon in the left sidebar (four small squares; or `Cmd+Shift+X` / `Ctrl+Shift+X`)
-- Search for **R** by REditorSupport and click **Install**
-- Search for **Quarto** by Quarto and click **Install**
+- Under **Installed**, you should see **R** (REditorSupport) and **Quarto**
+
+> If either is missing, search for it and click **Install** manually.
 
 ---
 
@@ -321,7 +324,7 @@ Key differences from RStudio:
 
 In this workshop you use **VS Code** as your editor and **Claude Code** as your AI assistant, all running inside a **Docker container**. Claude Code is a tool made by **Anthropic** (the company behind Claude) that lets you interact with Claude directly from the terminal.
 
-When you type a message to Claude Code, it is sent to **Claude Opus 4.6** (the most capable Claude model) through **AWS Bedrock**, Amazon's AI service, running on Yale's AWS account.
+When you type a message to Claude Code, it is sent to **Claude Opus 4.7** (the most capable Claude model) through **AWS Bedrock**, Amazon's AI service, running on Yale's AWS account.
 
 ---
 
