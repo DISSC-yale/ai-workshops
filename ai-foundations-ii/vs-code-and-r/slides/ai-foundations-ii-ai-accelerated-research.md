@@ -147,15 +147,15 @@ Type `/memory` in Claude Code to see what it has stored and toggle memory on or 
 
 ## Where memory lives
 
-Claude Code runs inside the container, so its memory is stored inside the container too. It's never uploaded or shared.
+Memory is stored inside the container, never uploaded or shared:
 
-| Location (inside the container) | What it contains |
+| Location | What it contains |
 |---|---|
-| `~/.claude/CLAUDE.md` | Your personal instructions for all projects in this sandbox |
-| `.claude/CLAUDE.md` | Project instructions (inside `workspace/`, visible to you on the host) |
-| `~/.claude/projects/<name>/memory/` | Notes Claude writes from your conversations |
+| `~/.claude/CLAUDE.md` | Personal instructions (this sandbox only) |
+| `.claude/CLAUDE.md` | Project instructions (inside `workspace/`) |
+| `~/.claude/projects/<name>/memory/` | Notes Claude writes from conversations |
 
-> `~/` inside the container is a Docker volume, separate from your macOS or Windows home folder. It persists across rebuilds but only for *this* sandbox.
+> `~/` is a Docker volume, separate from your macOS/Windows home folder.
 
 ---
 
