@@ -86,7 +86,7 @@ This gives you the most capable model with the highest-quality reasoning. If you
 VS Code's bottom Panel can have multiple terminals open at once. In this workshop you'll use two:
 
 - **R Terminal**: runs R code. Use it for `library()`, running code chunks, and interactive R work. Click `R: (not attached)` in the bottom status bar (the very bottom edge of the VS Code window) to start it.
-- **Terminal** (zsh): a general-purpose terminal. This is where you run `claude` to start Claude Code.
+- **Terminal**: a general-purpose terminal running inside the container (zsh on both macOS and Windows hosts, since the container is Linux). This is where you run `claude` to start Claude Code.
 
 To switch between them, click the **dropdown arrow** next to the terminal name at the top of the bottom panel (it might say "R Interactive" or "zsh"). You can also click the **+** icon to open a new terminal.
 
@@ -145,25 +145,28 @@ Type `/memory` in Claude Code to see what it has stored and toggle memory on or 
 
 ---
 
-## Where memory lives (macOS)
+## Where memory lives
 
-Memory is stored as simple text files on your machine. You can read, edit, or delete them at any time. They are never uploaded or shared.
+Claude Code runs inside the container, so its memory is stored inside the container too. It's never uploaded or shared.
 
-| Location | What it contains |
+| Location (inside the container) | What it contains |
 |---|---|
-| `~/.claude/CLAUDE.md` | Your personal instructions for all projects |
-| `.claude/CLAUDE.md` | Instructions specific to the current project |
+| `~/.claude/CLAUDE.md` | Your personal instructions for all projects in this sandbox |
+| `.claude/CLAUDE.md` | Project instructions (inside `workspace/`, visible to you on the host) |
 | `~/.claude/projects/<name>/memory/` | Notes Claude writes from your conversations |
+
+> `~/` inside the container is a Docker volume, separate from your macOS or Windows home folder. It persists across rebuilds but only for *this* sandbox.
 
 ---
 
-## Where memory lives (Windows)
+## Inspecting memory from the host
 
-| Location | What it contains |
-|---|---|
-| `%USERPROFILE%\.claude\CLAUDE.md` | Your personal instructions for all projects |
-| `.claude\CLAUDE.md` | Instructions specific to the current project |
-| `%USERPROFILE%\.claude\projects\<name>\memory\` | Notes Claude writes from your conversations |
+Anything under `workspace/` is visible on your host machine and shows up in the VS Code Explorer:
+
+- **macOS:** `<your-project>/workspace/.claude/`
+- **Windows:** `<your-project>\workspace\.claude\`
+
+Personal memories (`~/.claude/...`) live in the container's volume. To read them, open the **Terminal** in VS Code (inside the container) and run `cat ~/.claude/CLAUDE.md` — or just ask Claude: *"show me what's in your personal memory."*
 
 ---
 
@@ -184,8 +187,8 @@ Memory is stored as simple text files on your machine. You can read, edit, or de
 
 You can create your own skills by adding a `SKILL.md` file to your project. A skill is just a text file with instructions that Claude follows when you invoke it.
 
-- **Personal skills:** stored in `~/.claude/skills/`, available in all your projects
-- **Project skills:** stored in `.claude/skills/` inside your project folder, available to anyone who has the project
+- **Personal skills:** stored at `~/.claude/skills/` *inside the container* — available in any session of this sandbox
+- **Project skills:** stored at `.claude/skills/` inside `workspace/` — committed alongside your code so anyone who clones the project gets them
 
 This workshop includes a `/modernize` skill that converts old-style R code to modern tidyverse style. Open `.claude/skills/modernize/SKILL.md` in the Explorer to see how it works, then try it: type `/modernize` in Claude Code.
 

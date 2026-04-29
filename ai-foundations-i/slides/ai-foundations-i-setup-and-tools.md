@@ -67,13 +67,15 @@ winget install OpenJS.NodeJS.LTS
 
 ## 1. Install Node.js (verify)
 
-After installation, open a **new terminal** and verify:
+After installation, open a **new Terminal** (macOS) or **new PowerShell** (Windows) window and verify:
 
 ```
 node --version
 ```
 
 You should see a version number like `v22.x.x`.
+
+> Opening a *new* window matters: `node` won't be recognized in windows that were already open when you installed it.
 
 ---
 
@@ -89,11 +91,13 @@ An **API key** is like a password that lets your computer connect to Claude. Ema
 
 The setup wizard checks your machine for required tools, configures authentication, and downloads the sandbox environment.
 
-Open **Terminal** (macOS) or **PowerShell** (Windows) and move to the folder where you want your project to live (Desktop works well):
+Open **Terminal** (macOS) or **PowerShell** (Windows) and move to the folder where you want your project to live. Desktop works well on either platform:
 
 ```
 cd ~/Desktop
 ```
+
+> `~` expands to your home folder in both zsh (macOS) and PowerShell (Windows), so the same command works on both.
 
 Then run the wizard (replace `my-workshop` with any name you like):
 
@@ -116,9 +120,11 @@ The wizard checks for Git, Docker Desktop, VS Code, and the Dev Containers exten
 
 ## 3. Run the setup wizard (dependency notes)
 
-> **Windows:** Docker Desktop requires **WSL 2**. If Docker fails to install, open **PowerShell as Administrator**, run `wsl --install`, restart, then re-run the wizard.
+> **Windows — Docker needs WSL 2:** If Docker Desktop fails to install, open **PowerShell as Administrator**, run `wsl --install`, restart your computer, then re-run the wizard.
 
-> **macOS:** If the wizard says VS Code isn't installed but you already installed it, the `code` command isn't on your PATH. Open VS Code, press `Cmd+Shift+P`, type "shell command", and select **Shell Command: Install 'code' command in PATH**. Then re-run the wizard.
+> **Windows — VS Code not detected:** If the wizard says VS Code isn't installed but you already installed it, the `code` command isn't on your PATH. Reinstall VS Code and tick **"Add to PATH"** during setup, or restart your terminal. Then re-run the wizard.
+
+> **macOS — VS Code not detected:** Same issue, different fix. Open VS Code, press `Cmd+Shift+P`, type "shell command", and select **Shell Command: Install 'code' command in PATH**. Then re-run the wizard.
 
 ---
 
